@@ -1,6 +1,11 @@
 package com.stac.daijin.global.lib;
 
+import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.user.exception.UserNotFoundException;
+import com.stac.daijin.domain.user.facade.UserFacade;
+import com.stac.daijin.domain.user.repository.UserRepository;
 import com.stac.daijin.global.properties.JwtProperties;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -19,6 +24,7 @@ import java.util.Map;
 public class JwtProvider {
 
     private final JwtProperties jwtProperties;
+    private final UserFacade userFacade;
 
     public Key getSigningKey(String jwtKey) {
         byte[] keyBytes = jwtKey.getBytes(StandardCharsets.UTF_8);
@@ -57,9 +63,20 @@ public class JwtProvider {
                 .compact();
 
         if (jwtType.equals(JwtType.REFRESH)) {
-            //래디즈
+            //TODO 레디즈
         }
 
         return token;
+    }
+
+    public User validateToken(String token) {
+        Claims claims = Jwts
+                .parserBuilder()
+                .setSigningKey(getSigningKey(jwtProperties.getAccessKey()))
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+
+        return userFacade.getUserByAccountId(claims.get("accountId", String.class));
     }
 }

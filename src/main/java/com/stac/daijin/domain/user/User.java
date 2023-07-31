@@ -6,11 +6,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.Hibernate;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -35,4 +37,16 @@ public class User extends BaseUUIDEntity {
     @OneToMany(mappedBy = "user")
     private Set<Card> cards;
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || Hibernate.getClass(this) != Hibernate.getClass(obj)) return false;
+        User user = (User) obj;
+        return getAccountId() != null && Objects.equals(getAccountId(), user.getAccountId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getAccountId());
+    }
 }

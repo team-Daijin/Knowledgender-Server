@@ -4,16 +4,17 @@ import com.stac.daijin.domain.user.User;
 import com.stac.daijin.global.jpa.BaseUUIDEntity;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Getter
 @Builder
 @NoArgsConstructor @AllArgsConstructor
 public class Card extends BaseUUIDEntity {
+    @Id
+    private UUID id;
+
     private String title;
 
     @Enumerated(EnumType.STRING)

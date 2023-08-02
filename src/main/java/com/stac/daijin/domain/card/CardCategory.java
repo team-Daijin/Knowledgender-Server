@@ -6,11 +6,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 public enum CardCategory {
-    GENDERISSUES("젠더 문제"),
-    SEXUALASSAULTCOPE("성폭력 대처법"),
+    HEART("마음"),
     BODY("신체"),
-    RELATIONSHIP("친구 / 이성 관계"),
-    MY("나");
+    CRIME("범죄"),
+    RELATIONSHIP("관계"),
+    EQUALITY("평등");
 
     private final String value;
 }

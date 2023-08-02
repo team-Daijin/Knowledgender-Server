@@ -28,4 +28,10 @@ public class Card extends BaseUUIDEntity {
     @ManyToOne(optional = false)
     private User user;
 
+    public void updateCard(String title, CardCategory category, String content, String image) {
+        this.title = title;
+        this.category = category;
+        this.content = content;
+        this.image = image;
+    }
 }

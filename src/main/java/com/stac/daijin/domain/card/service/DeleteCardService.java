@@ -1,6 +1,7 @@
 package com.stac.daijin.domain.card.service;
 
 import com.stac.daijin.domain.card.Card;
+import com.stac.daijin.domain.card.exception.CardNotFoundException;
 import com.stac.daijin.domain.card.repository.CardRepository;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.IsNotWriterException;
@@ -27,7 +28,7 @@ public class DeleteCardService {
     ) {
         User user = userFacade.getUserByAccountId(accountId);
         Card card = cardRepository.findById(id)
-                        .orElseThrow(() -> new RuntimeException("개시글없음"));
+                        .orElseThrow(() -> CardNotFoundException.EXCEPTION);
 
         if (!user.equals(card.getUser())) {
             throw IsNotWriterException.EXCEPTION;

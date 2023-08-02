@@ -10,5 +10,4 @@ import lombok.RequiredArgsConstructor;
 public class LoginUserRequest {
     private String accountId;
     private String password;
-    private String sexyPangmoo;
 }

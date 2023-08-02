@@ -1,7 +1,7 @@
 package com.stac.daijin.domain.card.service;
 
 import com.stac.daijin.domain.card.Card;
-import com.stac.daijin.domain.card.presentation.dto.SaveCardRequest;
+import com.stac.daijin.domain.card.presentation.dto.request.SaveCardRequest;
 import com.stac.daijin.domain.card.repository.CardRepository;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.facade.UserFacade;

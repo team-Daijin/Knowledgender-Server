@@ -1,4 +1,4 @@
-package com.stac.daijin.domain.card.presentation.dto;
+package com.stac.daijin.domain.card.presentation.dto.request;
 
 
 import com.stac.daijin.domain.card.CardCategory;

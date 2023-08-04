@@ -34,6 +34,9 @@ public class User extends BaseUUIDEntity {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Enumerated(EnumType.STRING)
+    private Job job;
+
     @OneToMany(mappedBy = "user")
     private Set<Card> cards;
 

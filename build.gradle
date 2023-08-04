@@ -36,8 +36,17 @@ dependencies {
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.2.0'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'io.awspring.cloud:spring-cloud-starter-aws:2.4.4'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+task copyPrivate(type: Copy) {
+    copy {
+        from './Knowledgender-Server-Config'
+        include "*.yml"
+        into 'src/main/resources'
+    }
 }

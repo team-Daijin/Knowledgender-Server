@@ -26,6 +26,7 @@ public class QueryCardByIdService {
                 card.getId(),
                 card.getTitle(),
                 card.getUser().getName(),
+                card.getCategory(),
                 card.getContent(),
                 card.getImage()
         );

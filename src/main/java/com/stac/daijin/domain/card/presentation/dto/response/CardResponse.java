@@ -1,5 +1,6 @@
 package com.stac.daijin.domain.card.presentation.dto.response;
 
+import com.stac.daijin.domain.card.CardCategory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -11,6 +12,7 @@ public class CardResponse {
     private UUID id;
     private String title;
     private String writer;
+    private CardCategory category;
     private String content;
     private String image;
 }

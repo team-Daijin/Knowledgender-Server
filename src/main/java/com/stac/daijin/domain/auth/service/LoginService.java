@@ -1,7 +1,8 @@
 package com.stac.daijin.domain.auth.service;
 
-import com.stac.daijin.domain.auth.presentation.dto.request.LoginUserRequest;
+import com.stac.daijin.domain.auth.presentation.dto.request.LoginRequest;
 import com.stac.daijin.domain.auth.presentation.dto.response.LoginTokenResponse;
+import com.stac.daijin.domain.user.Role;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.UserNotFoundException;
 import com.stac.daijin.domain.user.exception.UserPasswordNotMatchException;
@@ -15,13 +16,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class LoginUserService {
+public class LoginService {
 
     private final UserRepository userRepository;
     private final JwtProvider jwtProvider;
 
     @Transactional
-    public LoginTokenResponse execute(LoginUserRequest request){
+    public LoginTokenResponse execute(LoginRequest request){
         User user = userRepository.findByAccountId(request.getAccountId())
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
 

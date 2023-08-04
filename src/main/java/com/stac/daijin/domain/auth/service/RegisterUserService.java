@@ -1,6 +1,7 @@
 package com.stac.daijin.domain.auth.service;
 
 import com.stac.daijin.domain.auth.presentation.dto.request.RegisterUserRequest;
+import com.stac.daijin.domain.user.Role;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.UserAccountIdExistsException;
 import com.stac.daijin.domain.user.repository.UserRepository;
@@ -27,6 +28,7 @@ public class RegisterUserService {
                 .name(request.getName())
                 .age(request.getAge())
                 .gender(request.getGender())
+                .role(Role.USER)
                 .build();
 
         userRepository.save(user);

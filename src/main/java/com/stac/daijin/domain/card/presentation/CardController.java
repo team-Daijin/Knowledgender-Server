@@ -3,10 +3,7 @@ package com.stac.daijin.domain.card.presentation;
 import com.stac.daijin.domain.card.CardCategory;
 import com.stac.daijin.domain.card.presentation.dto.request.SaveCardRequest;
 import com.stac.daijin.domain.card.presentation.dto.request.UpdateCardRequest;
-import com.stac.daijin.domain.card.service.DeleteCardService;
-import com.stac.daijin.domain.card.service.QueryAllCardByCategoryService;
-import com.stac.daijin.domain.card.service.SaveCardService;
-import com.stac.daijin.domain.card.service.UpdateCardService;
+import com.stac.daijin.domain.card.service.*;
 import com.stac.daijin.global.annotation.AuthRequired;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,6 +20,7 @@ public class CardController {
     private final DeleteCardService deleteCardService;
     private final UpdateCardService updateCardService;
     private final QueryAllCardByCategoryService queryAllCardByCategoryService;
+    private final QueryCardByIdService queryCardByIdService;
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.OK)
@@ -47,7 +45,7 @@ public class CardController {
     public void getCardById(
             @PathVariable UUID id
     ) {
-
+        queryCardByIdService.execute(id);
     }
 
     @PutMapping("/{id}")

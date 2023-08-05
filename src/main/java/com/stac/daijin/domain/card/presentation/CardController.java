@@ -3,12 +3,15 @@ package com.stac.daijin.domain.card.presentation;
 import com.stac.daijin.domain.card.CardCategory;
 import com.stac.daijin.domain.card.presentation.dto.request.SaveCardRequest;
 import com.stac.daijin.domain.card.presentation.dto.request.UpdateCardRequest;
+import com.stac.daijin.domain.card.presentation.dto.response.CardResponse;
 import com.stac.daijin.domain.card.service.*;
 import com.stac.daijin.global.annotation.AuthRequired;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -23,7 +26,7 @@ public class CardController {
     private final QueryCardByIdService queryCardByIdService;
 
     @PostMapping("/")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @AuthRequired
     public void saveCard(
             @ModelAttribute SaveCardRequest request,
@@ -32,20 +35,20 @@ public class CardController {
         saveCardService.execute(request, user);
     }
 
-    @GetMapping("/{category}")
+    @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
-    public void getCardByCategory(
-            @PathVariable CardCategory category
+    public List<CardResponse> getCardByCategory(
+            @RequestParam("category") CardCategory category
     ) {
-        queryAllCardByCategoryService.execute(category);
+        return queryAllCardByCategoryService.execute(category);
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void getCardById(
+    public CardResponse getCardById(
             @PathVariable UUID id
     ) {
-        queryCardByIdService.execute(id);
+        return queryCardByIdService.execute(id);
     }
 
     @PutMapping("/{id}")

@@ -3,21 +3,19 @@ package com.stac.daijin.global.lib;
 import com.stac.daijin.domain.auth.RefreshToken;
 import com.stac.daijin.domain.auth.repository.RefreshTokenRepository;
 import com.stac.daijin.domain.user.User;
-import com.stac.daijin.domain.user.exception.UserNotFoundException;
 import com.stac.daijin.domain.user.facade.UserFacade;
-import com.stac.daijin.domain.user.repository.UserRepository;
 import com.stac.daijin.global.properties.JwtProperties;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
 import java.security.Key;
-import java.util.Calendar;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,19 +34,17 @@ public class JwtProvider {
     }
 
     public String createToken(JwtType jwtType, String accountId) {
-        Date nowDate = new Date();
-        Calendar expiredDate = Calendar.getInstance();
-        expiredDate.setTime(nowDate);
-
+        Instant now = Instant.now();
+        Duration expiration = Duration.ZERO;
         String secretKey = "";
 
         switch(jwtType) {
             case ACCESS:
-                expiredDate.add(Calendar.DATE, 3);
+                expiration = expiration.plus(Duration.ofDays(7));
                 secretKey = jwtProperties.getAccessKey();
                 break;
             case REFRESH:
-                expiredDate.add(Calendar.DATE, 20);
+                expiration = expiration.plus(Duration.ofDays(14));
                 secretKey = jwtProperties.getRefreshKey();
                 break;
         }
@@ -62,7 +58,7 @@ public class JwtProvider {
 
         String token = Jwts.builder().setHeaderParams(headerMap)
                 .setClaims(claimsMap)
-                .setExpiration(expiredDate.getTime())
+                .setExpiration(Date.from(now.plus(expiration)))
                 .signWith(getSigningKey(secretKey), SignatureAlgorithm.HS256)
                 .compact();
 

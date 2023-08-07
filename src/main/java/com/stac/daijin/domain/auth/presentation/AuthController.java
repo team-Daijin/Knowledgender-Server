@@ -26,6 +26,7 @@ public class AuthController {
     }
 
     @PutMapping("/refresh")
+    @ResponseStatus(HttpStatus.OK)
     public AccessTokenResponse refreshToken(
             @RequestHeader(value = "Refresh-Token") String refreshToken
     ) {

@@ -1,5 +1,7 @@
 package com.stac.daijin.global.lib;
 
+import com.stac.daijin.domain.auth.RefreshToken;
+import com.stac.daijin.domain.auth.repository.RefreshTokenRepository;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.UserNotFoundException;
 import com.stac.daijin.domain.user.facade.UserFacade;
@@ -10,6 +12,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
@@ -25,6 +28,7 @@ public class JwtProvider {
 
     private final JwtProperties jwtProperties;
     private final UserFacade userFacade;
+    private final RefreshTokenRepository refreshTokenRepository;
 
     public Key getSigningKey(String jwtKey) {
         byte[] keyBytes = jwtKey.getBytes(StandardCharsets.UTF_8);
@@ -63,7 +67,11 @@ public class JwtProvider {
                 .compact();
 
         if (jwtType.equals(JwtType.REFRESH)) {
-            //TODO 레디즈
+            RefreshToken refreshToken = RefreshToken.builder()
+                    .refreshToken(token)
+                    .accountId(accountId)
+                    .build();
+            refreshTokenRepository.save(refreshToken);
         }
 
         return token;

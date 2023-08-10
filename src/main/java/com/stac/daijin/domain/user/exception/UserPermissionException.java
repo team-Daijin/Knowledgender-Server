@@ -7,6 +7,6 @@ public class UserPermissionException extends BusinessException {
     public static final BusinessException EXCEPTION = new UserPermissionException();
 
     public UserPermissionException() {
-        super(HttpStatus.BAD_REQUEST, "사용자의 권한이 부족합니다.");
+        super(HttpStatus.UNAUTHORIZED, "사용자의 권한이 부족합니다.");
     }
 }

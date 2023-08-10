@@ -2,7 +2,6 @@ package com.stac.daijin.domain.auth.service;
 
 import com.stac.daijin.domain.auth.presentation.dto.request.LoginRequest;
 import com.stac.daijin.domain.auth.presentation.dto.response.LoginTokenResponse;
-import com.stac.daijin.domain.user.Role;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.UserNotFoundException;
 import com.stac.daijin.domain.user.exception.UserPasswordNotMatchException;
@@ -26,7 +25,7 @@ public class LoginService {
         User user = userRepository.findByAccountId(request.getAccountId())
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
 
-        if (BCrypt.checkpw(request.getPassword(), user.getPassword())) {
+        if (!BCrypt.checkpw(request.getPassword(), user.getPassword())) {
             throw UserPasswordNotMatchException.EXCEPTION;
         }
 

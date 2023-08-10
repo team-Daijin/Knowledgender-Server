@@ -25,7 +25,7 @@ public class SaveCardService {
     ) {
         User user = userFacade.getUserByAccountId(accountId);
 
-        if (user.getRole().equals(Role.EXPORT)) {
+        if (!user.getRole().equals(Role.EXPORT)) {
             throw UserPermissionException.EXCEPTION;
         }
 

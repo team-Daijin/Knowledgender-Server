@@ -6,6 +6,7 @@ import com.stac.daijin.domain.card.presentation.dto.response.CardResponse;
 import com.stac.daijin.domain.card.repository.CardRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,6 +17,7 @@ public class QueryAllCardByCategoryService {
 
     private final CardRepository cardRepository;
 
+    @Transactional(readOnly = true)
     public List<CardResponse> execute(
             CardCategory category
     ) {

@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UpdateCardRequest {
     private String title;
-    private CardCategory category;
+    private String category;
     private String content;
     private MultipartFile image;
 }

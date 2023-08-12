@@ -18,8 +18,7 @@ public class Card extends BaseUUIDEntity {
 
     private String title;
 
-    @Enumerated(EnumType.STRING)
-    private CardCategory category;
+    private String category;
 
     private String content;
 
@@ -29,7 +28,7 @@ public class Card extends BaseUUIDEntity {
     @ManyToOne(optional = false)
     private User user;
 
-    public void updateCard(String title, CardCategory category, String content, String image) {
+    public void updateCard(String title, String category, String content, String image) {
         this.title = title;
         this.category = category;
         this.content = content;

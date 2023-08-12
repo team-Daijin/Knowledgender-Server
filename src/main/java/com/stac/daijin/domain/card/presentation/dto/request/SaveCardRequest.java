@@ -1,7 +1,6 @@
 package com.stac.daijin.domain.card.presentation.dto.request;
 
-
-import com.stac.daijin.domain.card.enums.CardCategory;
+import com.stac.daijin.global.annotation.CardCategoryValid;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,7 +10,8 @@ import org.springframework.web.multipart.MultipartFile;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class SaveCardRequest {
     private String title;
-    private CardCategory category;
+    @CardCategoryValid
+    private String category;
     private String content;
     private MultipartFile image;
 }

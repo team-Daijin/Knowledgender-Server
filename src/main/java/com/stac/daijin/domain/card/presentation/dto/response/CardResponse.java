@@ -12,7 +12,7 @@ public class CardResponse {
     private UUID id;
     private String title;
     private String writer;
-    private CardCategory category;
+    private String category;
     private String content;
     private String image;
 }

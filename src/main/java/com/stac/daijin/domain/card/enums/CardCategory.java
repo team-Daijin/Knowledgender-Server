@@ -10,7 +10,8 @@ public enum CardCategory {
     BODY("신체"),
     CRIME("범죄"),
     RELATIONSHIP("관계"),
-    EQUALITY("평등");
+    EQUALITY("평등"),
+    NONE("없음");
 
     private final String value;
 }

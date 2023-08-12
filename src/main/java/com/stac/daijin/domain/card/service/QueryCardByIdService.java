@@ -18,7 +18,7 @@ public class QueryCardByIdService {
 
     @Transactional(readOnly = true)
     public CardResponse execute(
-            UUID id
+            final UUID id
     ) {
         Card card = cardRepository.findById(id)
                 .orElseThrow(() -> CardNotFoundException.EXCEPTION);

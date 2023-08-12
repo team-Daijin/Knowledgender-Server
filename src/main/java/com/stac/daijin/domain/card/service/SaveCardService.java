@@ -20,8 +20,8 @@ public class SaveCardService {
 
     @Transactional
     public void execute(
-            SaveCardRequest request,
-            String accountId
+            final SaveCardRequest request,
+            final String accountId
     ) {
         User user = userFacade.getUserByAccountId(accountId);
 

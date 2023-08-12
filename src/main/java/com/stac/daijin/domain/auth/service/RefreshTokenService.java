@@ -16,7 +16,7 @@ public class RefreshTokenService {
     private final RefreshTokenRepository refreshTokenRepository;
 
     public AccessTokenResponse execute(
-            String token
+            final String token
     ) {
         RefreshToken refreshToken = refreshTokenRepository.findById(token)
                 .orElseThrow(() -> new RuntimeException("토큰 못찾음"));

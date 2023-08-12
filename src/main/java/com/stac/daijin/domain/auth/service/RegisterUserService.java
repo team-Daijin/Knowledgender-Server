@@ -17,7 +17,9 @@ public class RegisterUserService {
     private final UserRepository userRepository;
 
     @Transactional
-    public void execute(RegisterUserRequest request) {
+    public void execute(
+            final RegisterUserRequest request
+    ) {
         if (userRepository.existsByAccountId(request.getAccountId())) {
             throw UserAccountIdExistsException.EXCEPTION;
         }

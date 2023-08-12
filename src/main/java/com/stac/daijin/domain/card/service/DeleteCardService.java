@@ -10,8 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Iterator;
-import java.util.Set;
 import java.util.UUID;
 
 @Service
@@ -23,8 +21,8 @@ public class DeleteCardService {
 
     @Transactional
     public void execute(
-            UUID id,
-            String accountId
+            final UUID id,
+            final String accountId
     ) {
         User user = userFacade.getUserByAccountId(accountId);
         Card card = cardRepository.findById(id)

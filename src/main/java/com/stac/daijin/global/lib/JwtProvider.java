@@ -33,7 +33,10 @@ public class JwtProvider {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public String createToken(JwtType jwtType, String accountId) {
+    public String createToken(
+            final JwtType jwtType,
+            final String accountId
+    ) {
         Instant now = Instant.now();
         Duration expiration = Duration.ZERO;
         String secretKey = "";

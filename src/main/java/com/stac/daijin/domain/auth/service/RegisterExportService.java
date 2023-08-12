@@ -17,7 +17,9 @@ public class RegisterExportService {
     private final UserRepository userRepository;
 
     @Transactional
-    public void execute(RegisterExportRequest request) {
+    public void execute(
+            final RegisterExportRequest request
+    ) {
         if (userRepository.existsByAccountId(request.getAccountId())) {
             throw UserAccountIdExistsException.EXCEPTION;
         }

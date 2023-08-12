@@ -22,9 +22,9 @@ public class UpdateCardService {
 
     @Transactional
     public void execute(
-            UUID id,
-            UpdateCardRequest request,
-            String accountId
+            final UUID id,
+            final UpdateCardRequest request,
+            final String accountId
     ) {
         Card card = cardRepository.findById(id)
                 .orElseThrow(() -> CardNotFoundException.EXCEPTION);

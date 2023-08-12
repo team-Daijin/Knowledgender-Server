@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,7 +29,7 @@ public class CardController {
     @ResponseStatus(HttpStatus.CREATED)
     @AuthRequired
     public void saveCard(
-            @ModelAttribute SaveCardRequest request,
+            @ModelAttribute @Valid SaveCardRequest request,
             @RequestAttribute String user
     ) {
         saveCardService.execute(request, user);

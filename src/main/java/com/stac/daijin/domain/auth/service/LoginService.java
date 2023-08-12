@@ -5,6 +5,7 @@ import com.stac.daijin.domain.auth.presentation.dto.response.LoginTokenResponse;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.UserNotFoundException;
 import com.stac.daijin.domain.user.exception.UserPasswordNotMatchException;
+import com.stac.daijin.domain.user.facade.UserFacade;
 import com.stac.daijin.domain.user.repository.UserRepository;
 import com.stac.daijin.global.lib.JwtProvider;
 import com.stac.daijin.global.lib.JwtType;
@@ -17,13 +18,12 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class LoginService {
 
-    private final UserRepository userRepository;
+    private final UserFacade userFacade;
     private final JwtProvider jwtProvider;
 
     @Transactional
     public LoginTokenResponse execute(LoginRequest request){
-        User user = userRepository.findByAccountId(request.getAccountId())
-                .orElseThrow(() -> UserNotFoundException.EXCEPTION);
+        User user = userFacade.getUserByAccountId(request.getAccountId());
 
         if (!BCrypt.checkpw(request.getPassword(), user.getPassword())) {
             throw UserPasswordNotMatchException.EXCEPTION;

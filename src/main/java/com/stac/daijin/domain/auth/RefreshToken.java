@@ -6,9 +6,6 @@ import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
-import java.util.Calendar;
-
-
 @Getter
 @AllArgsConstructor
 @Builder

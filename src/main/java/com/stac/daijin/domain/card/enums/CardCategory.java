@@ -1,4 +1,4 @@
-package com.stac.daijin.domain.card;
+package com.stac.daijin.domain.card.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

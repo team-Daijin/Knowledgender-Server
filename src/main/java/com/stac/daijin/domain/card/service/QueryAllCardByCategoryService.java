@@ -1,7 +1,7 @@
 package com.stac.daijin.domain.card.service;
 
 import com.stac.daijin.domain.card.Card;
-import com.stac.daijin.domain.card.CardCategory;
+import com.stac.daijin.domain.card.enums.CardCategory;
 import com.stac.daijin.domain.card.presentation.dto.response.CardResponse;
 import com.stac.daijin.domain.card.repository.CardRepository;
 import lombok.AllArgsConstructor;

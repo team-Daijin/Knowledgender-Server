@@ -1,6 +1,9 @@
 package com.stac.daijin.domain.user;
 
 import com.stac.daijin.domain.card.Card;
+import com.stac.daijin.domain.user.enums.Gender;
+import com.stac.daijin.domain.user.enums.Job;
+import com.stac.daijin.domain.user.enums.Role;
 import com.stac.daijin.global.jpa.BaseUUIDEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

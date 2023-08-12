@@ -1,6 +1,6 @@
 package com.stac.daijin.domain.card.presentation.dto.request;
 
-import com.stac.daijin.domain.card.CardCategory;
+import com.stac.daijin.domain.card.enums.CardCategory;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 

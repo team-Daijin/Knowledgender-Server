@@ -1,13 +1,12 @@
 package com.stac.daijin.domain.card.presentation;
 
-import com.stac.daijin.domain.card.CardCategory;
+import com.stac.daijin.domain.card.enums.CardCategory;
 import com.stac.daijin.domain.card.presentation.dto.request.SaveCardRequest;
 import com.stac.daijin.domain.card.presentation.dto.request.UpdateCardRequest;
 import com.stac.daijin.domain.card.presentation.dto.response.CardResponse;
 import com.stac.daijin.domain.card.service.*;
 import com.stac.daijin.global.annotation.AuthRequired;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

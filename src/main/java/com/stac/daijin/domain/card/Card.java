@@ -1,5 +1,6 @@
 package com.stac.daijin.domain.card;
 
+import com.stac.daijin.domain.card.enums.CardCategory;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.global.jpa.BaseUUIDEntity;
 import lombok.*;

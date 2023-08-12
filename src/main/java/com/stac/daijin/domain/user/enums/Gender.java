@@ -1,4 +1,4 @@
-package com.stac.daijin.domain.user;
+package com.stac.daijin.domain.user.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

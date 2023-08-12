@@ -12,4 +12,4 @@ public class DaijinApplication {
         SpringApplication.run(DaijinApplication.class, args);
     }
 
-}
+}  

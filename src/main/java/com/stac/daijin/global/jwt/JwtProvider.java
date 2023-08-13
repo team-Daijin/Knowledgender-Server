@@ -1,10 +1,11 @@
-package com.stac.daijin.global.lib;
+package com.stac.daijin.global.jwt;
 
 import com.stac.daijin.domain.auth.RefreshToken;
 import com.stac.daijin.domain.auth.repository.RefreshTokenRepository;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
-import com.stac.daijin.global.properties.JwtProperties;
+import com.stac.daijin.global.jwt.enums.JwtType;
+import com.stac.daijin.global.jwt.properties.JwtProperties;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

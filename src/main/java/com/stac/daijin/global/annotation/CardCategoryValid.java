@@ -4,16 +4,10 @@ import com.stac.daijin.global.validator.CardCategoryValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
-import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
-@Documented
-@Target({ FIELD })
-@Retention(RUNTIME)
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = {CardCategoryValidator.class})
 public @interface CardCategoryValid {
 

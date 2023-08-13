@@ -3,7 +3,7 @@ package com.stac.daijin.global.interceptor;
 import com.stac.daijin.domain.auth.exception.AuthenticationFailedException;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.global.annotation.AuthRequired;
-import com.stac.daijin.global.lib.JwtProvider;
+import com.stac.daijin.global.jwt.JwtProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;

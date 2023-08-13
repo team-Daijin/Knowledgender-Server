@@ -19,7 +19,7 @@ public class QueryAllCardByCategoryService {
 
     @Transactional(readOnly = true)
     public List<CardResponse> execute(
-            final CardCategory category
+            final String category
     ) {
         List<Card> cards = cardRepository.findByCategory(category);
         return cards.

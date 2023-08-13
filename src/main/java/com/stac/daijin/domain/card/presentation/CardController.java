@@ -1,6 +1,5 @@
 package com.stac.daijin.domain.card.presentation;
 
-import com.stac.daijin.domain.card.enums.CardCategory;
 import com.stac.daijin.domain.card.presentation.dto.request.SaveCardRequest;
 import com.stac.daijin.domain.card.presentation.dto.request.UpdateCardRequest;
 import com.stac.daijin.domain.card.presentation.dto.response.CardResponse;
@@ -38,7 +37,7 @@ public class CardController {
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
     public List<CardResponse> getCardByCategory(
-            @RequestParam("category") CardCategory category
+            @RequestParam String category
     ) {
         return queryAllCardByCategoryService.execute(category);
     }

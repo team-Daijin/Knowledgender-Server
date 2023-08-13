@@ -15,11 +15,13 @@ import java.util.UUID;
 public class Card extends BaseUUIDEntity {
     @Id
     private UUID id;
-
+    @Column(nullable = false)
     private String title;
 
+    @Column(nullable = false)
     private String category;
 
+    @Column(nullable = false)
     private String content;
 
     private String image;

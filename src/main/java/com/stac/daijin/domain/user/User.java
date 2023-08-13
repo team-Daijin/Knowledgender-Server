@@ -11,10 +11,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
@@ -23,10 +20,13 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor @AllArgsConstructor
 public class User extends BaseUUIDEntity {
+    @Column(unique = true, nullable = false)
     private String accountId;
 
+    @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private String name;
 
     private int age;

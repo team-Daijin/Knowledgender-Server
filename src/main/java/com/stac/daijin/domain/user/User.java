@@ -40,13 +40,13 @@ public class User extends BaseUUIDEntity {
     @Enumerated(EnumType.STRING)
     private Job job;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Card> cards;
 
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj == null || Hibernate.getClass(this) != Hibernate.getClass(obj)) return false;
+        if (obj == null || Hibernate.getClass(this) != Hibernate.getClass(obj) || getClass() != obj.getClass()) return false;
         User user = (User) obj;
         return getAccountId() != null && Objects.equals(getAccountId(), user.getAccountId());
     }

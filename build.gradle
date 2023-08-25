@@ -22,34 +22,50 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    //spring
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter'
-    compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    //validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    //data
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    //socket io
+    implementation 'com.corundumstudio.socketio:netty-socketio:1.7.19'
+
+    //lombok
+    compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    //lib
     implementation 'org.mindrot:jbcrypt:0.4'
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
-    testImplementation 'org.mockito:mockito-junit-jupiter:5.2.0'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'io.awspring.cloud:spring-cloud-starter-aws:2.4.4'
-    implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.7.11'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+    //test
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.2.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    //third party
+    implementation 'io.awspring.cloud:spring-cloud-starter-aws:2.4.4'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
 }
 
-task copyPrivate(type: Copy) {
+/*task copyPrivate(type: Copy) {
     copy {
         from './Knowledgender-Server-Config'
         include "*.yml"
         into 'src/main/resources'
     }
-}
+} */

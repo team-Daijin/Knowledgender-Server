@@ -31,7 +31,7 @@ public class JoinRoomService {
         sendMessageService.sendMessage(new MessageRequest(
                 user.getAccountId() + " 님이 참가했습니다.", String.valueOf(room.getId())
                 ),
-                user.getAccountId()
+                client
         );
 
         room.addParticipants(user.getAccountId());

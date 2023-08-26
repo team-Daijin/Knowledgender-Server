@@ -17,7 +17,7 @@ public class SocketConnectController {
 
     @OnConnect
     public void onConnect(SocketIOClient client) {
-        String bearerToken = client.getHandshakeData().getHttpHeaders().get("Authorization");
+        String bearerToken = client.getHandshakeData().getSingleUrlParam("authorization");
         String token = jwtExtract.execute(bearerToken);
         client.set(SocketStoreKey.USER_KEY, jwtProvider.validateToken(token).getAccountId());
     }

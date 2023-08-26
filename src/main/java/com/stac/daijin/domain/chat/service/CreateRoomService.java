@@ -20,9 +20,9 @@ public class CreateRoomService {
 
     @Transactional
     public void createRoom(
-            String accoutId
+            String accountId
     ){
-        User user = userFacade.getUserByAccountId(accoutId);
+        User user = userFacade.getUserByAccountId(accountId);
         Room room = Room.builder().name("").participants(new ArrayList<>()).build();
         room.addParticipants(user.getAccountId());
         roomRepository.save(room);

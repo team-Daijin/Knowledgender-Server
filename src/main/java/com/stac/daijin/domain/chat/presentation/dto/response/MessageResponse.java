@@ -1,12 +1,15 @@
 package com.stac.daijin.domain.chat.presentation.dto.response;
 
 import com.stac.daijin.domain.chat.Message;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import org.joda.time.LocalDateTime;
 
+import java.time.format.DateTimeFormatter;
+
 @Getter
-@Builder
+@Builder @AllArgsConstructor
 public class MessageResponse {
     private final String message;
     private final String username;
@@ -16,7 +19,7 @@ public class MessageResponse {
     public static MessageResponse of(Message message, String roomId) {
         return MessageResponse.builder()
                 .message(message.getMessage())
-                .sentAt(new LocalDateTime().toString())
+                .sentAt(message.getSentAt().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")))
                 .roomId(roomId)
                 .build();
     }

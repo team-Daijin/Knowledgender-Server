@@ -1,9 +1,9 @@
 package com.stac.daijin.global.socket.config.property;
 
-public class SocketEventProperty {
-    public static final String MESSAGE_KEY = "message";
-    public static final String ROOM_JOIN_KEY = "room-join";
-    public static final String ROOM_LEAVE_KEY = "room-leave";
-    public static final String SUBSCRIBE_KEY = "subscribe";
-    public static final String ERROR_KEY = "error";
+public interface SocketEventProperty {
+    String MESSAGE_KEY = "message";
+    String ROOM_JOIN_KEY = "room-join";
+    String ROOM_LEAVE_KEY = "room-leave";
+    String SUBSCRIBE_KEY = "subscribe";
+    String ERROR_KEY = "error";
 }

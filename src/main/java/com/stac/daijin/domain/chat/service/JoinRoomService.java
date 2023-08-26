@@ -20,7 +20,7 @@ public class JoinRoomService {
     private final SendMessageService sendMessageService;
 
     @Transactional
-    public void joinRoom(
+    public void execute(
             SocketIOClient client,
             JoinRoomRequest request
     ) {

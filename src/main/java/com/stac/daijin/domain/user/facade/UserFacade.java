@@ -4,6 +4,7 @@ import com.corundumstudio.socketio.SocketIOClient;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.UserNotFoundException;
 import com.stac.daijin.domain.user.repository.UserRepository;
+import com.stac.daijin.global.socket.config.property.SocketStoreKey;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +22,7 @@ public class UserFacade {
     }
 
     public User findUserByClient(SocketIOClient client) {
-        return userRepository.findByAccountId(client.get("user"))
+        return userRepository.findByAccountId(client.get(SocketStoreKey.USER_KEY))
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }
 

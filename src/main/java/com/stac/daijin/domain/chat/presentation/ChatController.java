@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ChatController {
     private final SendMessageService sendMessageService;
 
-
     @OnEvent(SocketEventProperty.MESSAGE_KEY)
     public void sendMessage(
             SocketIOClient client,

@@ -5,6 +5,8 @@ import com.stac.daijin.domain.auth.repository.RefreshTokenRepository;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
 import com.stac.daijin.global.jwt.enums.JwtType;
+import com.stac.daijin.global.jwt.exception.ExpiredJwtException;
+import com.stac.daijin.global.jwt.exception.InvalidTokenException;
 import com.stac.daijin.global.jwt.properties.JwtProperties;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -78,13 +80,19 @@ public class JwtProvider {
     }
 
     public User validateToken(String token) {
-        Claims claims = Jwts
-                .parserBuilder()
-                .setSigningKey(getSigningKey(jwtProperties.getAccessKey()))
-                .build()
-                .parseClaimsJws(token)
-                .getBody();
-
-        return userFacade.getUserByAccountId(claims.get("accountId", String.class));
+        try {
+            return userFacade.getUserByAccountId(
+                    Jwts.parserBuilder()
+                            .setSigningKey(getSigningKey(jwtProperties.getAccessKey()))
+                            .build()
+                            .parseClaimsJws(token)
+                            .getBody()
+                            .get("accountId", String.class)
+            );
+        } catch (ExpiredJwtException e) {
+            throw ExpiredJwtException.EXCEPTION;
+        } catch (Exception e) {
+            throw InvalidTokenException.EXCEPTION;
+        }
     }
 }

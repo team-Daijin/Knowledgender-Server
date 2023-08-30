@@ -2,6 +2,7 @@ package com.stac.daijin.domain.card.service;
 
 import com.stac.daijin.domain.card.Card;
 import com.stac.daijin.domain.card.exception.CardNotFoundException;
+import com.stac.daijin.domain.card.facade.CardFacade;
 import com.stac.daijin.domain.card.presentation.dto.request.UpdateCardRequest;
 import com.stac.daijin.domain.card.repository.CardRepository;
 import com.stac.daijin.domain.user.User;
@@ -17,7 +18,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class UpdateCardService {
 
-    private final CardRepository cardRepository;
+    private final CardFacade cardFacade;
     private final UserFacade userFacade;
 
     @Transactional
@@ -26,8 +27,7 @@ public class UpdateCardService {
             final UpdateCardRequest request,
             final String accountId
     ) {
-        Card card = cardRepository.findById(id)
-                .orElseThrow(() -> CardNotFoundException.EXCEPTION);
+        Card card = cardFacade.getCardById(id);
         User user = userFacade.getUserByAccountId(accountId);
         if (user.equals(card.getUser())) {
             throw IsNotWriterException.EXCEPTION;

@@ -2,6 +2,7 @@ package com.stac.daijin.domain.card.service;
 
 import com.stac.daijin.domain.card.Card;
 import com.stac.daijin.domain.card.exception.CardNotFoundException;
+import com.stac.daijin.domain.card.facade.CardFacade;
 import com.stac.daijin.domain.card.repository.CardRepository;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.IsNotWriterException;
@@ -16,6 +17,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class DeleteCardService {
 
+    private final CardFacade cardFacade;
     private final CardRepository cardRepository;
     private final UserFacade userFacade;
 
@@ -25,8 +27,7 @@ public class DeleteCardService {
             final String accountId
     ) {
         User user = userFacade.getUserByAccountId(accountId);
-        Card card = cardRepository.findById(id)
-                        .orElseThrow(() -> CardNotFoundException.EXCEPTION);
+        Card card = cardFacade.getCardById(id);
 
         if (!user.equals(card.getUser())) {
             throw IsNotWriterException.EXCEPTION;

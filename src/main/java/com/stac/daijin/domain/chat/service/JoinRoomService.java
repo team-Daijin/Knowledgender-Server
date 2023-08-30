@@ -2,6 +2,7 @@ package com.stac.daijin.domain.chat.service;
 
 import com.corundumstudio.socketio.SocketIOClient;
 import com.stac.daijin.domain.chat.Room;
+import com.stac.daijin.domain.chat.exception.RoomFullException;
 import com.stac.daijin.domain.chat.facade.RoomFacade;
 import com.stac.daijin.domain.chat.presentation.dto.request.JoinRoomRequest;
 import com.stac.daijin.domain.chat.presentation.dto.request.MessageRequest;
@@ -26,6 +27,10 @@ public class JoinRoomService {
     ) {
         Room room = roomFacade.getRoomByRoomId(request.getId());
         User user = userFacade.findUserByClient(client);
+
+        if (room.getParticipants().size() > 2) {
+            throw RoomFullException.EXCEPTION;
+        }
 
         client.joinRoom(String.valueOf(room.getId()));
         sendMessageService.sendMessage(new MessageRequest(

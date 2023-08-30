@@ -8,6 +8,8 @@ import com.stac.daijin.domain.card.repository.CardRepository;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.IsNotWriterException;
 import com.stac.daijin.domain.user.facade.UserFacade;
+import com.stac.daijin.thirdparty.s3.UploadS3Service;
+import com.stac.daijin.thirdparty.s3.enums.Directory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +22,7 @@ public class UpdateCardService {
 
     private final CardFacade cardFacade;
     private final UserFacade userFacade;
+    private final UploadS3Service uploadS3Service;
 
     @Transactional
     public void execute(
@@ -36,7 +39,7 @@ public class UpdateCardService {
                 request.getTitle(),
                 request.getCategory(),
                 request.getContent(),
-                ""
+                uploadS3Service.uploadImage(request.getImage(), Directory.CARD)
         );
     }
 }

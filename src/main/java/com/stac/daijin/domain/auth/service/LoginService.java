@@ -23,7 +23,7 @@ public class LoginService {
     public LoginTokenResponse execute(
             final LoginRequest request
     ){
-        User user = userFacade.getUserByAccountId(request.getAccountId());
+        User user = userFacade.findUserByAccountId(request.getAccountId());
 
         if (!BCrypt.checkpw(request.getPassword(), user.getPassword())) {
             throw UserPasswordNotMatchException.EXCEPTION;

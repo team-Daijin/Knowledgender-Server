@@ -1,7 +1,6 @@
 package com.stac.daijin.domain.card.service;
 
 import com.stac.daijin.domain.card.Card;
-import com.stac.daijin.domain.card.facade.CardFacade;
 import com.stac.daijin.domain.card.presentation.dto.request.SaveCardRequest;
 import com.stac.daijin.domain.card.repository.CardRepository;
 import com.stac.daijin.domain.user.enums.Role;
@@ -27,7 +26,7 @@ public class SaveCardService {
             final SaveCardRequest request,
             final String accountId
     ) {
-        User user = userFacade.getUserByAccountId(accountId);
+        User user = userFacade.findUserByAccountId(accountId);
 
         if (!user.getRole().equals(Role.EXPORT)) {
             throw UserPermissionException.EXCEPTION;

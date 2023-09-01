@@ -1,7 +1,6 @@
 package com.stac.daijin.domain.card.service;
 
 import com.stac.daijin.domain.card.Card;
-import com.stac.daijin.domain.card.exception.CardNotFoundException;
 import com.stac.daijin.domain.card.facade.CardFacade;
 import com.stac.daijin.domain.card.repository.CardRepository;
 import com.stac.daijin.domain.user.User;
@@ -26,7 +25,7 @@ public class DeleteCardService {
             final UUID id,
             final String accountId
     ) {
-        User user = userFacade.getUserByAccountId(accountId);
+        User user = userFacade.findUserByAccountId(accountId);
         Card card = cardFacade.getCardById(id);
 
         if (!user.equals(card.getUser())) {

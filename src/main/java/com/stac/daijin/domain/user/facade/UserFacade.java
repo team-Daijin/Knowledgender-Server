@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.UUID;
+
 @Component
 @RequiredArgsConstructor
 public class UserFacade {
@@ -16,7 +18,7 @@ public class UserFacade {
     private final UserRepository userRepository;
 
     @Transactional(readOnly = true)
-    public User getUserByAccountId(String accountId) {
+    public User findUserByAccountId(String accountId) {
         return userRepository.findByAccountId(accountId)
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }

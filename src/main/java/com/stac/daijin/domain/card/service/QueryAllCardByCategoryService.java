@@ -2,6 +2,8 @@ package com.stac.daijin.domain.card.service;
 
 import com.stac.daijin.domain.card.Card;
 import com.stac.daijin.domain.card.enums.CardCategory;
+import com.stac.daijin.domain.card.facade.CardFacade;
+import com.stac.daijin.domain.card.presentation.dto.response.CardListResponse;
 import com.stac.daijin.domain.card.presentation.dto.response.CardResponse;
 import com.stac.daijin.domain.card.repository.CardRepository;
 import lombok.AllArgsConstructor;
@@ -18,22 +20,15 @@ public class QueryAllCardByCategoryService {
     private final CardRepository cardRepository;
 
     @Transactional(readOnly = true)
-    public List<CardResponse> execute(
+    public CardListResponse execute(
             final String category
     ) {
-        List<Card> cards = cardRepository.findByCategory(category);
-        return cards.
-                stream().
-                map(
-                        card -> new CardResponse(
-                                card.getId(),
-                                card.getTitle(),
-                                card.getUser().getName(),
-                                card.getCategory(),
-                                card.getContent(),
-                                card.getImage()
-                        )
-                ).collect(Collectors.toList());
+        return new CardListResponse(
+                cardRepository.findByCategory(category)
+                        .stream()
+                        .map(CardResponse::of)
+                        .collect(Collectors.toList())
+        );
     }
 
 }

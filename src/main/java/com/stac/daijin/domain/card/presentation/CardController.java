@@ -2,6 +2,7 @@ package com.stac.daijin.domain.card.presentation;
 
 import com.stac.daijin.domain.card.presentation.dto.request.SaveCardRequest;
 import com.stac.daijin.domain.card.presentation.dto.request.UpdateCardRequest;
+import com.stac.daijin.domain.card.presentation.dto.response.CardListResponse;
 import com.stac.daijin.domain.card.presentation.dto.response.CardResponse;
 import com.stac.daijin.domain.card.service.*;
 import com.stac.daijin.global.annotation.AuthRequired;
@@ -36,7 +37,7 @@ public class CardController {
 
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
-    public List<CardResponse> getCardByCategory(
+    public CardListResponse getCardByCategory(
             @RequestParam String category
     ) {
         return queryAllCardByCategoryService.execute(category);

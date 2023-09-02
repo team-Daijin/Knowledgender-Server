@@ -1,4 +1,4 @@
-package com.stac.daijin.domain.user.presentation.dto;
+package com.stac.daijin.domain.user.presentation.dto.request;
 
 import lombok.AccessLevel;
 import lombok.Getter;

@@ -21,15 +21,7 @@ public class QueryCardByIdService {
     public CardResponse execute(
             final UUID id
     ) {
-        Card card = cardFacade.getCardById(id);
-        return new CardResponse(
-                card.getId(),
-                card.getTitle(),
-                card.getUser().getName(),
-                card.getCategory(),
-                card.getContent(),
-                card.getImage()
-        );
+        return CardResponse.of(cardFacade.getCardById(id));
     }
 
 }

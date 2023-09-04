@@ -2,11 +2,9 @@ package com.stac.daijin.domain.chat.presentation;
 
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.annotation.OnEvent;
-import com.stac.daijin.domain.chat.presentation.dto.request.CreateRoomRequest;
 import com.stac.daijin.domain.chat.presentation.dto.request.JoinRoomRequest;
 import com.stac.daijin.domain.chat.service.CreateRoomService;
 import com.stac.daijin.domain.chat.service.JoinRoomService;
-import com.stac.daijin.global.annotation.AuthRequired;
 import com.stac.daijin.global.socket.config.property.SocketEventProperty;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +17,6 @@ public class RoomController {
     private final JoinRoomService joinRoomService;
 
     @PostMapping("/")
-    @AuthRequired
     public void createRoom(
             @RequestAttribute String user
     ) {

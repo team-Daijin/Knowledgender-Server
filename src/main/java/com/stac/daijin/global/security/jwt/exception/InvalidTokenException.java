@@ -1,4 +1,4 @@
-package com.stac.daijin.global.jwt.exception;
+package com.stac.daijin.global.security.jwt.exception;
 
 import com.stac.daijin.global.exception.BusinessException;
 import org.springframework.http.HttpStatus;

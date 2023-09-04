@@ -1,4 +1,4 @@
-package com.stac.daijin.global.jwt.properties;
+package com.stac.daijin.global.security.jwt.properties;
 
 import lombok.Getter;
 import lombok.Setter;

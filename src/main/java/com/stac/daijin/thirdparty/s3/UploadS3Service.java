@@ -21,6 +21,9 @@ public class UploadS3Service {
             MultipartFile image,
             Directory directory
     ) {
+        if (image.isEmpty() || image.equals("")) {
+            return "";
+        }
         String fileName = createFileName(directory, image.getOriginalFilename());
         try {
             PutObjectRequest request = new PutObjectRequest(

@@ -1,5 +1,6 @@
 package com.stac.daijin.domain.user.presentation;
 
+import com.stac.daijin.domain.user.presentation.dto.response.UserResponse;
 import com.stac.daijin.domain.user.service.DeleteUserService;
 import com.stac.daijin.domain.user.service.QueryUserByIdService;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +23,7 @@ public class UserController {
 
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
-    public void getUser() {
-        queryUserService.execute();
+    public UserResponse getUser() {
+        return queryUserService.execute();
     }
 }

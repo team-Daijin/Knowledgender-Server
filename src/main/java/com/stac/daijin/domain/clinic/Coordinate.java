@@ -1,5 +1,6 @@
 package com.stac.daijin.domain.clinic;
 
+import com.stac.daijin.domain.clinic.exception.IsNotInRangeClinicException;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -38,7 +39,7 @@ public class Coordinate {
 
     private static void validateRange(double latitude, double longitude) {
         if (isNotInRange(latitude, longitude)) {
-            throw new RuntimeException("");
+            throw IsNotInRangeClinicException.EXCEPTION;
         }
     }
 

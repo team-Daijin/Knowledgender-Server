@@ -16,10 +16,8 @@ public class QueryAppointmentListService {
     private final AppointmentRepository appointmentRepository;
     private final UserFacade userFacade;
 
-    public AppointmentListResponse execute(
-            String accountId
-    ) {
-        User user = userFacade.findUserByAccountId(accountId);
+    public AppointmentListResponse execute() {
+        User user = userFacade.getCurrentUser();
         return new AppointmentListResponse(
                 appointmentRepository.findAllByUser(user)
                         .stream()

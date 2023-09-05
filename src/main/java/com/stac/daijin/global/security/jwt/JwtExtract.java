@@ -1,4 +1,4 @@
-package com.stac.daijin.global.jwt;
+package com.stac.daijin.global.security.jwt;
 
 import org.springframework.stereotype.Component;
 

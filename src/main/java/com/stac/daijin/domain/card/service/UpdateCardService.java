@@ -25,11 +25,10 @@ public class UpdateCardService {
     @Transactional
     public void execute(
             final UUID id,
-            final UpdateCardRequest request,
-            final String accountId
+            final UpdateCardRequest request
     ) {
         Card card = cardFacade.getCardById(id);
-        User user = userFacade.findUserByAccountId(accountId);
+        User user = userFacade.getCurrentUser();
         if (user.equals(card.getUser())) {
             throw IsNotWriterException.EXCEPTION;
         }

@@ -1,14 +1,13 @@
-package com.stac.daijin.global.jwt;
+package com.stac.daijin.global.security.jwt;
 
 import com.stac.daijin.domain.auth.RefreshToken;
 import com.stac.daijin.domain.auth.repository.RefreshTokenRepository;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
-import com.stac.daijin.global.jwt.enums.JwtType;
-import com.stac.daijin.global.jwt.exception.ExpiredJwtException;
-import com.stac.daijin.global.jwt.exception.InvalidTokenException;
-import com.stac.daijin.global.jwt.properties.JwtProperties;
-import io.jsonwebtoken.Claims;
+import com.stac.daijin.global.security.jwt.enums.JwtType;
+import com.stac.daijin.global.security.jwt.exception.ExpiredJwtException;
+import com.stac.daijin.global.security.jwt.exception.InvalidTokenException;
+import com.stac.daijin.global.security.jwt.properties.JwtProperties;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -81,7 +80,7 @@ public class JwtProvider {
 
     public User validateToken(String token) {
         try {
-            return userFacade.getUserByAccountId(
+            return userFacade.findUserByAccountId(
                     Jwts.parserBuilder()
                             .setSigningKey(getSigningKey(jwtProperties.getAccessKey()))
                             .build()

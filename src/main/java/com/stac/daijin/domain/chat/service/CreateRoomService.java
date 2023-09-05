@@ -17,10 +17,8 @@ public class CreateRoomService {
     private final UserFacade userFacade;
 
     @Transactional
-    public void createRoom(
-            String accountId
-    ){
-        User user = userFacade.findUserByAccountId(accountId);
+    public void createRoom(){
+        User user = userFacade.getCurrentUser();
         Room room = Room.builder().name("").participants(new ArrayList<>()).build();
         room.addParticipants(user.getAccountId());
         roomRepository.save(room);

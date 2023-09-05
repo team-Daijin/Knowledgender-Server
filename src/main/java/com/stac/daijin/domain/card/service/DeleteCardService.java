@@ -22,10 +22,9 @@ public class DeleteCardService {
 
     @Transactional
     public void execute(
-            final UUID id,
-            final String accountId
+            final UUID id
     ) {
-        User user = userFacade.findUserByAccountId(accountId);
+        User user = userFacade.getCurrentUser();
         Card card = cardFacade.getCardById(id);
 
         if (!user.equals(card.getUser())) {

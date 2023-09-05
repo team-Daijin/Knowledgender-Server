@@ -5,13 +5,11 @@ import com.stac.daijin.domain.card.presentation.dto.request.UpdateCardRequest;
 import com.stac.daijin.domain.card.presentation.dto.response.CardListResponse;
 import com.stac.daijin.domain.card.presentation.dto.response.CardResponse;
 import com.stac.daijin.domain.card.service.*;
-import com.stac.daijin.global.annotation.AuthRequired;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -27,12 +25,10 @@ public class CardController {
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    @AuthRequired
     public void saveCard(
-            @ModelAttribute @Valid SaveCardRequest request,
-            @RequestAttribute String user
+            @ModelAttribute @Valid SaveCardRequest request
     ) {
-        saveCardService.execute(request, user);
+        saveCardService.execute(request);
     }
 
     @GetMapping("/")
@@ -53,22 +49,18 @@ public class CardController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @AuthRequired
     public void updateCard(
             @PathVariable UUID id,
-            @ModelAttribute UpdateCardRequest request,
-            @RequestAttribute String user
+            @ModelAttribute UpdateCardRequest request
     ) {
-        updateCardService.execute(id, request, user);
+        updateCardService.execute(id, request);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @AuthRequired
     public void deleteCard(
-            @PathVariable UUID id,
-            @RequestAttribute String user
+            @PathVariable UUID id
     ) {
-        deleteCardService.execute(id, user);
+        deleteCardService.execute(id);
     }
 }

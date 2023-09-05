@@ -2,8 +2,8 @@ package com.stac.daijin.global.socket;
 
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.annotation.OnConnect;
-import com.stac.daijin.global.jwt.JwtExtract;
-import com.stac.daijin.global.jwt.JwtProvider;
+import com.stac.daijin.global.security.jwt.JwtExtract;
+import com.stac.daijin.global.security.jwt.JwtProvider;
 import com.stac.daijin.global.socket.config.property.SocketStoreKey;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

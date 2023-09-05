@@ -19,18 +19,11 @@ public class QueryClinicService {
             double latitude,
             double longitude
     ) {
-
-        List<Clinic> clinics = clinicRepository.findAllByCoordinateAndDistanceInMeters(
-                Coordinate.of(latitude, longitude),
-                3000
-        );
-
-        return clinics.stream().map(
-                clinic -> new ClinicResponse(
-                        clinic.getName(), clinic.getCoordinate().getAddress(), clinic.getContact(), clinic.getIntroduce(), clinic.getAppointmentAvailable()
-                )
+        return clinicRepository.findAllByCoordinateAndDistanceInMeters(
+                Coordinate.of(latitude, longitude), 3000
+        ).stream().map(
+                ClinicResponse::of
         ).collect(Collectors.toList());
-
     }
 
 

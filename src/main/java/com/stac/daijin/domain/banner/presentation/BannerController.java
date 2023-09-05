@@ -15,9 +15,7 @@ public class BannerController {
     private final QueryBannerService queryBannerService;
 
     @GetMapping("/")
-    public BannerListResponse getBannerList(
-
-    ) {
+    public BannerListResponse getBannerList() {
         return queryBannerService.execute();
     }
 

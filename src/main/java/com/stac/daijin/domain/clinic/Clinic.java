@@ -9,12 +9,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @Getter
 @AllArgsConstructor @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 public class Clinic extends BaseUUIDEntity {
+    private UUID id;
     private String name;
 
     private String introduce;

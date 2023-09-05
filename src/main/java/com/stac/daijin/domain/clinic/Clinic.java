@@ -5,6 +5,7 @@ import com.stac.daijin.global.jpa.BaseUUIDEntity;
 import lombok.*;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.Set;
@@ -23,6 +24,9 @@ public class Clinic extends BaseUUIDEntity {
     private Coordinate coordinate;
 
     private String code;
+
+    @Column(length = 500)
+    private String image;
 
     private Boolean appointmentAvailable;
 

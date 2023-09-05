@@ -18,10 +18,9 @@ public class SaveAppointmentService {
     private final UserFacade userFacade;
 
     public void execute(
-            AppointmentRequest request,
-            String accountId
+            AppointmentRequest request
     ) {
-        User user = userFacade.findUserByAccountId(accountId);
+        User user = userFacade.getCurrentUser();
         Clinic clinic = clinicRepository.findById(request.getClinicId())
                 .orElseThrow();
         appointmentRepository.save(

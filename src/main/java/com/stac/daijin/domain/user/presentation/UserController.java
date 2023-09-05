@@ -16,17 +16,13 @@ public class UserController {
 
     @DeleteMapping("/")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteUser(
-            @RequestAttribute String user
-            ) {
-        deleteUserService.execute(user);
+    public void deleteUser() {
+        deleteUserService.execute();
     }
 
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
-    public void getUser(
-            @RequestAttribute String user
-    ) {
-        queryUserService.execute(user);
+    public void getUser() {
+        queryUserService.execute();
     }
 }

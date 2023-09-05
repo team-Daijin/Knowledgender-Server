@@ -17,10 +17,8 @@ public class RoomController {
     private final JoinRoomService joinRoomService;
 
     @PostMapping("/")
-    public void createRoom(
-            @RequestAttribute String user
-    ) {
-        createRoomService.createRoom(user);
+    public void createRoom() {
+        createRoomService.createRoom();
     }
 
     @OnEvent(SocketEventProperty.ROOM_JOIN_KEY)

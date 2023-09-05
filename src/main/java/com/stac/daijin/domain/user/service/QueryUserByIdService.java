@@ -11,10 +11,8 @@ import org.springframework.stereotype.Service;
 public class QueryUserByIdService {
     private final UserFacade userFacade;
 
-    public UserResponse execute(
-            String accountId
-    ) {
-        User user = userFacade.findUserByAccountId(accountId);
+    public UserResponse execute() {
+        User user = userFacade.getCurrentUser();
         return new UserResponse(
                 user.getName(), user.getAge(), user.getGender().getGender()
         );

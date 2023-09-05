@@ -15,9 +15,8 @@ public class AppointmentController {
     @PostMapping("/")
     @ResponseStatus(HttpStatus.OK)
     public void saveAppointment(
-            @RequestBody AppointmentRequest request,
-            @RequestAttribute String user
+            @RequestBody AppointmentRequest request
     ) {
-        saveAppointmentService.execute(request, user);
+        saveAppointmentService.execute(request);
     }
 }

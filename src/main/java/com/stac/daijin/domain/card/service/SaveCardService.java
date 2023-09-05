@@ -23,10 +23,9 @@ public class SaveCardService {
 
     @Transactional
     public void execute(
-            final SaveCardRequest request,
-            final String accountId
+            final SaveCardRequest request
     ) {
-        User user = userFacade.findUserByAccountId(accountId);
+        User user = userFacade.getCurrentUser();
 
         if (!user.getRole().equals(Role.EXPORT)) {
             throw UserPermissionException.EXCEPTION;

@@ -24,16 +24,21 @@ public class Card extends BaseUUIDEntity {
     @Column(nullable = false)
     private String content;
 
+    @Column(nullable = true)
+    private String thumbnail;
+
+    @Column(nullable = true)
     private String image;
 
     @Setter
     @ManyToOne(optional = false)
     private User user;
 
-    public void updateCard(String title, String category, String content, String image) {
+    public void updateCard(String title, String category, String content, String image, String thumbnail) {
         this.title = title;
         this.category = category;
         this.content = content;
         this.image = image;
+        this.thumbnail = thumbnail;
     }
 }

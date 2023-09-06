@@ -13,4 +13,5 @@ public class UpdateCardRequest {
     private String category;
     private String content;
     private MultipartFile image;
+    private MultipartFile thumbnail;
 }

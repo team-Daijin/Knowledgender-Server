@@ -36,6 +36,7 @@ public class SaveCardService {
                 .category(request.getCategory())
                 .content(request.getContent())
                 .image(uploadS3Service.uploadImage(request.getImage(), Directory.CARD))
+                .thumbnail(uploadS3Service.uploadImage(request.getThumbnail(), Directory.CARD))
                 .build();
         card.setUser(user);
         cardRepository.save(card);

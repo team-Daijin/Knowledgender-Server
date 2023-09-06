@@ -13,5 +13,6 @@ public class SaveCardRequest {
     @CardCategoryValid
     private String category;
     private String content;
+    private MultipartFile thumbnail;
     private MultipartFile image;
 }

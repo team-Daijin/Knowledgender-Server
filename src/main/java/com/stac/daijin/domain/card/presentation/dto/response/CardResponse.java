@@ -17,6 +17,7 @@ public class CardResponse {
     private String writer;
     private String category;
     private String content;
+    private String thumbnail;
     private String image;
 
     public static CardResponse of(Card card) {
@@ -26,6 +27,7 @@ public class CardResponse {
                 .writer(card.getUser().getAccountId())
                 .category(card.getCategory())
                 .content(card.getContent())
+                .thumbnail(card.getThumbnail())
                 .image(card.getImage())
                 .build();
     }

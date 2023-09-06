@@ -36,7 +36,8 @@ public class UpdateCardService {
                 request.getTitle(),
                 request.getCategory(),
                 request.getContent(),
-                uploadS3Service.uploadImage(request.getImage(), Directory.CARD)
+                uploadS3Service.uploadImage(request.getImage(), Directory.CARD),
+                uploadS3Service.uploadImage(request.getThumbnail(), Directory.CARD)
         );
     }
 }

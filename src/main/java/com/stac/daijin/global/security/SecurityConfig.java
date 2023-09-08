@@ -18,6 +18,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsUtils;
+
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -44,20 +48,46 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
                 .and()
+                .cors()
+                .configurationSource(request -> {
+                    var cors = new CorsConfiguration();
+                    cors.setAllowedOrigins(List.of("*"));
+                    cors.setAllowedMethods(List.of(
+                            HttpMethod.GET.name(),
+                            HttpMethod.HEAD.name(),
+                            HttpMethod.POST.name(),
+                            HttpMethod.PUT.name(),
+                            HttpMethod.DELETE.name(),
+                            HttpMethod.PATCH.name()
+                    ));
+                    cors.setAllowedHeaders(
+                            List.of(
+                                    "Access-Control-Allow-Origin",
+                                    "Content-Type",
+                                    "Authorization"
+                            )
+                    );
+                    cors.setMaxAge(3000L);
+                    return cors;
+                })
+
+                .and()
                 .authorizeRequests()
                 //auth
                 .antMatchers("/api/auth/**").permitAll()
+                .antMatchers("/api/auth/export/**").permitAll()
+                .antMatchers("/api/auth/user/**").permitAll()
                 //user
                 .antMatchers(HttpMethod.GET, "/api/user/").authenticated()
                 .antMatchers(HttpMethod.DELETE, "/api/user/").authenticated()
                 //card
-                .antMatchers(HttpMethod.POST, "/api/card/").hasRole(Role.EXPORT.getValue())
+                .antMatchers(HttpMethod.POST, "/api/card/").hasRole(Role.ROLE_EXPORT.getValue())
                 .antMatchers(HttpMethod.GET, "/api/card/").permitAll()
                 .antMatchers(HttpMethod.GET,"/api/card/{\\d+}").permitAll()
-                .antMatchers(HttpMethod.PUT, "/api/card/{\\d+}").hasRole(Role.EXPORT.getValue())
-                .antMatchers(HttpMethod.DELETE, "/api/card/{\\d+}").hasRole(Role.EXPORT.getValue())
+                .antMatchers(HttpMethod.PUT, "/api/card/{\\d+}").hasRole(Role.ROLE_EXPORT.getValue())
+                .antMatchers(HttpMethod.DELETE, "/api/card/{\\d+}").hasRole(Role.ROLE_EXPORT.getValue())
                 //clinic
-                .antMatchers(HttpMethod.POST, "/api/clinic/").hasRole(Role.EXPORT.getValue())
+                .antMatchers(HttpMethod.POST, "/api/clinic/").hasRole(Role.ROLE_EXPORT.getValue())
                 .antMatchers(HttpMethod.GET, "/api/clinic/").permitAll()
                 //appointment
                 .antMatchers(HttpMethod.POST, "/api/appointment/").authenticated()

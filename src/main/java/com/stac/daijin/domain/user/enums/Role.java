@@ -6,9 +6,9 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum Role {
-    ADMIN("관리자"),
-    EXPORT("전문가"),
-    USER("사용자");
+    ROLE_ADMIN("ADMIN"),
+    ROLE_EXPORT("EXPORT"),
+    ROLE_USER("USER");
 
     private final String value;
 }

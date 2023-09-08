@@ -7,6 +7,7 @@ import com.stac.daijin.domain.user.exception.UserAccountIdExistsException;
 import com.stac.daijin.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class RegisterUserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional
     public void execute(
@@ -26,11 +28,11 @@ public class RegisterUserService {
 
         User user = User.builder()
                 .accountId(request.getAccountId())
-                .password(BCrypt.hashpw(request.getPassword(), BCrypt.gensalt()) )
+                .password(passwordEncoder.encode(request.getPassword()))
                 .name(request.getName())
                 .age(request.getAge())
                 .gender(request.getGender())
-                .role(Role.USER)
+                .role(Role.ROLE_USER)
                 .build();
 
         userRepository.save(user);

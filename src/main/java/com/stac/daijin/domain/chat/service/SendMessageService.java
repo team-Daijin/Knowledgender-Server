@@ -19,7 +19,6 @@ import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class SendMessageService {
     private final SocketIOServer socketIOServer;
     private final MessageRepository messageRepository;

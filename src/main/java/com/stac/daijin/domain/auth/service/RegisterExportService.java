@@ -6,6 +6,7 @@ import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.UserAccountIdExistsException;
 import com.stac.daijin.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +21,7 @@ public class RegisterExportService {
     public void execute(
             final RegisterExportRequest request
     ) {
+
         if (userRepository.existsByAccountId(request.getAccountId())) {
             throw UserAccountIdExistsException.EXCEPTION;
         }
@@ -29,7 +31,7 @@ public class RegisterExportService {
                 .password(BCrypt.hashpw(request.getPassword(), BCrypt.gensalt()))
                 .name(request.getName())
                 .job(request.getJob())
-                .role(Role.EXPORT)
+                .role(Role.ROLE_EXPORT)
                 .build();
         userRepository.save(user);
     }

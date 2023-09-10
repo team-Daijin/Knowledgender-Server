@@ -9,6 +9,7 @@ public enum Job {
     DOCTER("의사"),
     COUNSELOR("상담사"),
     PHARMACIST("약사"),
+    TEACHER("선생님"),
     ETC("기타");
 
     private final String value;

@@ -21,7 +21,7 @@ public class ClinicController {
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
     public void registerClinic(
-            @RequestBody ClinicRequest request
+            @ModelAttribute ClinicRequest request
     ) {
         registerClinicService.execute(request);
     }

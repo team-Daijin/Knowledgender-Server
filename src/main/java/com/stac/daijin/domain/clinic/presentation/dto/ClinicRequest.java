@@ -1,11 +1,10 @@
 package com.stac.daijin.domain.clinic.presentation.dto;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ClinicRequest {
 
@@ -19,26 +18,9 @@ public class ClinicRequest {
 
     private String code;
 
-    private LocationRequest location;
+    private String address;
 
-    public String getAddress() {
-        return location.getAddress();
-    }
+    private Double latitude;
 
-    public Double getLatitude() {
-        return location.getLatitude();
-    }
-
-    public Double getLongitude() {
-        return location.getLongitude();
-    }
-
-    @Getter
-    static private class LocationRequest {
-        private String address;
-        private Double latitude;
-        private Double longitude;
-    }
-
-
+    private Double longitude;
 }

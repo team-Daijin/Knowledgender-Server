@@ -21,7 +21,7 @@ public class UploadS3Service {
             MultipartFile image,
             Directory directory
     ) {
-        if (image.isEmpty() || image.equals("")) {
+        if (image.isEmpty() || image.equals("") ) {
             return "";
         }
         String fileName = createFileName(directory, image.getOriginalFilename());
@@ -32,7 +32,7 @@ public class UploadS3Service {
                     image.getInputStream(),
                     getObjectMetadata(image)
             );
-            amazonS3Client.putObject(request.withCannedAcl(CannedAccessControlList.PublicRead));
+            amazonS3Client.putObject(request.withCannedAcl(CannedAccessControlList.Private));
         } catch (Exception e) {
             e.printStackTrace();
             throw S3FailedFileSaveException.EXCEPTION;

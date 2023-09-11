@@ -7,6 +7,9 @@ import com.stac.daijin.domain.card.presentation.dto.response.CardListResponse;
 import com.stac.daijin.domain.card.presentation.dto.response.CardResponse;
 import com.stac.daijin.domain.card.repository.CardRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class QueryAllCardByCategoryService {
 
     private final CardRepository cardRepository;
@@ -24,7 +27,7 @@ public class QueryAllCardByCategoryService {
             final String category
     ) {
         return new CardListResponse(
-                cardRepository.findByCategory(category)
+                cardRepository.findAllByCategory(category, Sort.by(Sort.Direction.DESC, "createAt"))
                         .stream()
                         .map(CardResponse::of)
                         .collect(Collectors.toList())

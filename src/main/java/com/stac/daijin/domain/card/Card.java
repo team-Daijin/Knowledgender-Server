@@ -4,8 +4,10 @@ import com.stac.daijin.domain.card.enums.CardCategory;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.global.jpa.BaseUUIDEntity;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -24,11 +26,14 @@ public class Card extends BaseUUIDEntity {
     @Column(nullable = false)
     private String content;
 
-    @Column(nullable = true)
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String thumbnail;
 
-    @Column(nullable = true)
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String image;
+
+    @CreatedDate
+    private LocalDateTime createAt;
 
     @Setter
     @ManyToOne(optional = false)

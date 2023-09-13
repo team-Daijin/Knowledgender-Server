@@ -4,7 +4,7 @@ import com.stac.daijin.global.exception.BusinessException;
 import org.springframework.http.HttpStatus;
 
 public class UserPasswordNotMatchException extends BusinessException {
-    public static final BusinessException EXCEPTION = new UserNotFoundException();
+    public static final BusinessException EXCEPTION = new UserPasswordNotMatchException();
 
 
     public UserPasswordNotMatchException() {

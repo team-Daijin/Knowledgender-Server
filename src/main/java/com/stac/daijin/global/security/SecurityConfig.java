@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stac.daijin.domain.user.enums.Role;
 import com.stac.daijin.global.exception.filter.GlobalExceptionFilter;
 import com.stac.daijin.global.security.auth.AuthUserService;
-import com.stac.daijin.global.security.jwt.JwtAuthenticationFilter;
+import com.stac.daijin.global.security.jwt.filter.JwtAuthenticationFilter;
 import com.stac.daijin.global.security.jwt.JwtExtract;
 import com.stac.daijin.global.security.jwt.JwtProvider;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsUtils;
 
 import java.util.List;
 

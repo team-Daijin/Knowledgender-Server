@@ -1,4 +1,4 @@
-package com.stac.daijin.global.socket.config;
+package com.stac.daijin.global.config;
 
 import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOServer;

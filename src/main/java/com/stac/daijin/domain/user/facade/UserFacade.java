@@ -5,13 +5,11 @@ import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.exception.UserNotFoundException;
 import com.stac.daijin.domain.user.repository.UserRepository;
 import com.stac.daijin.global.security.auth.AuthUser;
-import com.stac.daijin.global.socket.config.property.SocketStoreKey;
+import com.stac.daijin.global.socket.constants.SocketStoreKey;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor

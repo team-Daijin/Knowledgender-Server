@@ -10,9 +10,8 @@ import com.stac.daijin.domain.chat.presentation.dto.response.MessageResponse;
 import com.stac.daijin.domain.chat.repository.MessageRepository;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
-import com.stac.daijin.global.socket.config.property.SocketEventProperty;
+import com.stac.daijin.global.socket.constants.SocketEventProperty;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

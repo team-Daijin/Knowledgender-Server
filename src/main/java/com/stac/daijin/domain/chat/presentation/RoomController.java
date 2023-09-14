@@ -5,7 +5,7 @@ import com.corundumstudio.socketio.annotation.OnEvent;
 import com.stac.daijin.domain.chat.presentation.dto.request.JoinRoomRequest;
 import com.stac.daijin.domain.chat.service.CreateRoomService;
 import com.stac.daijin.domain.chat.service.JoinRoomService;
-import com.stac.daijin.global.socket.config.property.SocketEventProperty;
+import com.stac.daijin.global.socket.constants.SocketEventProperty;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

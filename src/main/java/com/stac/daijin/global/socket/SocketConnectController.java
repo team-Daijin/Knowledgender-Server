@@ -4,7 +4,7 @@ import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.annotation.OnConnect;
 import com.stac.daijin.global.security.jwt.JwtExtract;
 import com.stac.daijin.global.security.jwt.JwtProvider;
-import com.stac.daijin.global.socket.config.property.SocketStoreKey;
+import com.stac.daijin.global.socket.constants.SocketStoreKey;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

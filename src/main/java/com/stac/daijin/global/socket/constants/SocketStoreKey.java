@@ -1,4 +1,4 @@
-package com.stac.daijin.global.socket.config.property;
+package com.stac.daijin.global.socket.constants;
 
 public interface SocketStoreKey {
     String USER_KEY = "user";

@@ -6,7 +6,7 @@ import com.stac.daijin.domain.chat.presentation.dto.request.MessageRequest;
 import com.stac.daijin.domain.chat.presentation.dto.response.MessageListResponse;
 import com.stac.daijin.domain.chat.service.QueryMessageListService;
 import com.stac.daijin.domain.chat.service.SendMessageService;
-import com.stac.daijin.global.socket.config.property.SocketEventProperty;
+import com.stac.daijin.global.socket.constants.SocketEventProperty;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

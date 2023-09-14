@@ -4,7 +4,7 @@ import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.listener.ExceptionListener;
 import com.stac.daijin.global.exception.BusinessException;
 import com.stac.daijin.global.exception.response.ExceptionResponse;
-import com.stac.daijin.global.socket.config.property.SocketEventProperty;
+import com.stac.daijin.global.socket.constants.SocketEventProperty;
 import io.netty.channel.ChannelHandlerContext;
 import org.springframework.stereotype.Component;
 

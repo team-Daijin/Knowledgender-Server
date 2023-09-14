@@ -91,6 +91,7 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.GET, "/api/clinic/").permitAll()
                 //appointment
                 .antMatchers(HttpMethod.POST, "/api/appointment/").authenticated()
+                .antMatchers(HttpMethod.GET, "/api/appointment/").authenticated()
                 .anyRequest().authenticated()
 
                 .and()

@@ -12,6 +12,8 @@ public class ClinicResponse {
     private UUID id;
     private String name;
     private String address;
+    private Double latitude;
+    private Double longitude;
     private String contact;
     private String introduce;
     private String image;
@@ -22,6 +24,8 @@ public class ClinicResponse {
                 clinic.getId(),
                 clinic.getName(),
                 clinic.getCoordinate().getAddress(),
+                clinic.getCoordinate().getLatitude(),
+                clinic.getCoordinate().getLatitude(),
                 clinic.getContact(),
                 clinic.getIntroduce(),
                 clinic.getImage(),

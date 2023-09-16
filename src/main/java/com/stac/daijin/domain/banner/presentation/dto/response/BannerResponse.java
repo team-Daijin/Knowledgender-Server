@@ -9,7 +9,6 @@ import java.util.UUID;
 @Getter
 @Builder
 public class BannerResponse {
-    private UUID id;
     private String fileUrl;
     private String redirect;
 

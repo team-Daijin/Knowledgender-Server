@@ -25,7 +25,7 @@ public class ClinicResponse {
                 clinic.getName(),
                 clinic.getCoordinate().getAddress(),
                 clinic.getCoordinate().getLatitude(),
-                clinic.getCoordinate().getLatitude(),
+                clinic.getCoordinate().getLongitude(),
                 clinic.getContact(),
                 clinic.getIntroduce(),
                 clinic.getImage(),

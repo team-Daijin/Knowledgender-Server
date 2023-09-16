@@ -24,9 +24,6 @@ public class Banner extends BaseUUIDEntity {
     @Column(nullable = true)
     private String redirect;
 
-    @Column(nullable = false)
-    private LocalDate endDate;
-
     @Enumerated(EnumType.STRING)
     @Column(length = 10, nullable = false)
     private State state;

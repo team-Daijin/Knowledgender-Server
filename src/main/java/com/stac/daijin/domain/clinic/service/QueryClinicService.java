@@ -20,7 +20,7 @@ public class QueryClinicService {
             double longitude
     ) {
         return clinicRepository.findAllByCoordinateAndDistanceInMeters(
-                Coordinate.of(latitude, longitude), 3000
+                Coordinate.of(latitude, longitude), 10000
         ).stream().map(
                 ClinicResponse::of
         ).collect(Collectors.toList());

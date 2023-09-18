@@ -1,10 +1,11 @@
 package com.stac.daijin.domain.card;
 
-import com.stac.daijin.domain.card.enums.CardCategory;
 import com.stac.daijin.domain.user.User;
 import com.stac.daijin.global.jpa.BaseUUIDEntity;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -32,7 +33,7 @@ public class Card extends BaseUUIDEntity {
     @Column(nullable = true, columnDefinition = "TEXT")
     private String image;
 
-    @CreatedDate
+    @CreationTimestamp
     private LocalDateTime createAt;
 
     @Setter

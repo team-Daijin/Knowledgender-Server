@@ -1,12 +1,12 @@
 package com.stac.daijin.domain.chat.service;
 
 import com.corundumstudio.socketio.SocketIOClient;
-import com.stac.daijin.domain.chat.Room;
+import com.stac.daijin.domain.chat.domain.Room;
 import com.stac.daijin.domain.chat.exception.RoomFullException;
 import com.stac.daijin.domain.chat.facade.RoomFacade;
 import com.stac.daijin.domain.chat.presentation.dto.request.JoinRoomRequest;
 import com.stac.daijin.domain.chat.presentation.dto.request.MessageRequest;
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

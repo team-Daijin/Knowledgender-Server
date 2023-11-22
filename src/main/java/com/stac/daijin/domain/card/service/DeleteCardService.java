@@ -1,9 +1,9 @@
 package com.stac.daijin.domain.card.service;
 
-import com.stac.daijin.domain.card.Card;
+import com.stac.daijin.domain.card.domain.Card;
 import com.stac.daijin.domain.card.facade.CardFacade;
-import com.stac.daijin.domain.card.repository.CardRepository;
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.card.domain.repository.CardRepository;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.exception.IsNotWriterException;
 import com.stac.daijin.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;

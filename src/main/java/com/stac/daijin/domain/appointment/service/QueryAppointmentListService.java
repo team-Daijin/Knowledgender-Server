@@ -2,8 +2,8 @@ package com.stac.daijin.domain.appointment.service;
 
 import com.stac.daijin.domain.appointment.presentation.dto.response.AppointmentListResponse;
 import com.stac.daijin.domain.appointment.presentation.dto.response.AppointmentResponse;
-import com.stac.daijin.domain.appointment.repository.AppointmentRepository;
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.appointment.domain.repository.AppointmentRepository;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

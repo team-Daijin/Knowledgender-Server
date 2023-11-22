@@ -1,10 +1,10 @@
 package com.stac.daijin.domain.auth.service;
 
 import com.stac.daijin.domain.auth.presentation.dto.request.RegisterUserRequest;
-import com.stac.daijin.domain.user.enums.Gender;
-import com.stac.daijin.domain.user.enums.Role;
-import com.stac.daijin.domain.user.User;
-import com.stac.daijin.domain.user.repository.UserRepository;
+import com.stac.daijin.domain.user.domain.type.Gender;
+import com.stac.daijin.domain.user.domain.type.Role;
+import com.stac.daijin.domain.user.domain.User;
+import com.stac.daijin.domain.user.domain.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,7 +32,7 @@ class RegisterUserServiceTest {
             .name("예시임")
             .age(23)
             .gender(Gender.MALE)
-            .role(Role.USER)
+            .role(Role.ROLE_USER)
             .build();
 
     @DisplayName("회원가입 테스트")
@@ -59,6 +59,6 @@ class RegisterUserServiceTest {
         assertEquals("예시임", savedUser.getName());
         assertEquals(23, savedUser.getAge());
         assertEquals(Gender.MALE, savedUser.getGender());
-        assertEquals(Role.USER, Role.USER);
+        assertEquals(Role.ROLE_USER, Role.ROLE_USER);
     }
 }

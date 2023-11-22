@@ -1,8 +1,8 @@
 package com.stac.daijin.domain.auth.service;
 
-import com.stac.daijin.domain.auth.RefreshToken;
+import com.stac.daijin.domain.auth.domain.RefreshToken;
 import com.stac.daijin.domain.auth.presentation.dto.response.AccessTokenResponse;
-import com.stac.daijin.domain.auth.repository.RefreshTokenRepository;
+import com.stac.daijin.domain.auth.domain.repository.RefreshTokenRepository;
 import com.stac.daijin.global.security.jwt.JwtProvider;
 import com.stac.daijin.global.security.jwt.enums.JwtType;
 import com.stac.daijin.global.security.jwt.exception.InvalidTokenException;

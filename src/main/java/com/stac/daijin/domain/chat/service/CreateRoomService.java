@@ -1,8 +1,8 @@
 package com.stac.daijin.domain.chat.service;
 
-import com.stac.daijin.domain.chat.Room;
-import com.stac.daijin.domain.chat.repository.RoomRepository;
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.chat.domain.Room;
+import com.stac.daijin.domain.chat.domain.repository.RoomRepository;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

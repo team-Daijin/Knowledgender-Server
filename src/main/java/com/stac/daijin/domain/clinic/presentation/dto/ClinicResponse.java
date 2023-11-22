@@ -1,6 +1,6 @@
 package com.stac.daijin.domain.clinic.presentation.dto;
 
-import com.stac.daijin.domain.clinic.Clinic;
+import com.stac.daijin.domain.clinic.domain.Clinic;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

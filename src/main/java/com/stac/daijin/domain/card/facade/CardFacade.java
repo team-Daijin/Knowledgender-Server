@@ -1,8 +1,8 @@
 package com.stac.daijin.domain.card.facade;
 
-import com.stac.daijin.domain.card.Card;
+import com.stac.daijin.domain.card.domain.Card;
 import com.stac.daijin.domain.card.exception.CardNotFoundException;
-import com.stac.daijin.domain.card.repository.CardRepository;
+import com.stac.daijin.domain.card.domain.repository.CardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

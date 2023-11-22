@@ -1,7 +1,7 @@
 package com.stac.daijin.global.security.auth;
 
 import com.stac.daijin.domain.user.exception.UserNotFoundException;
-import com.stac.daijin.domain.user.repository.UserRepository;
+import com.stac.daijin.domain.user.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

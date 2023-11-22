@@ -1,6 +1,6 @@
 package com.stac.daijin.domain.auth.presentation.dto.request;
 
-import com.stac.daijin.domain.user.enums.Job;
+import com.stac.daijin.domain.user.domain.type.Job;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

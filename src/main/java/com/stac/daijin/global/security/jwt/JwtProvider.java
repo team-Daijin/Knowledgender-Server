@@ -1,8 +1,8 @@
 package com.stac.daijin.global.security.jwt;
 
-import com.stac.daijin.domain.auth.RefreshToken;
-import com.stac.daijin.domain.auth.repository.RefreshTokenRepository;
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.auth.domain.RefreshToken;
+import com.stac.daijin.domain.auth.domain.repository.RefreshTokenRepository;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
 import com.stac.daijin.global.security.jwt.enums.JwtType;
 import com.stac.daijin.global.security.jwt.exception.ExpiredJwtException;

@@ -1,6 +1,6 @@
 package com.stac.daijin.global.security.auth;
 
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.user.domain.User;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

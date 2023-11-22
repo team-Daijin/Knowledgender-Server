@@ -1,10 +1,8 @@
 package com.stac.daijin.domain.banner.presentation.dto.response;
 
-import com.stac.daijin.domain.banner.Banner;
+import com.stac.daijin.domain.banner.domain.Banner;
 import lombok.Builder;
 import lombok.Getter;
-
-import java.util.UUID;
 
 @Getter
 @Builder

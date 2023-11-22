@@ -1,6 +1,6 @@
 package com.stac.daijin.global.validator;
 
-import com.stac.daijin.domain.card.enums.CardCategory;
+import com.stac.daijin.domain.card.domain.type.CardCategory;
 import com.stac.daijin.global.annotation.CardCategoryValid;
 import org.springframework.stereotype.Component;
 

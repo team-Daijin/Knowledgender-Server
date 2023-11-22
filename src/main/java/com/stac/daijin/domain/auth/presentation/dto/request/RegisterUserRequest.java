@@ -1,6 +1,6 @@
 package com.stac.daijin.domain.auth.presentation.dto.request;
 
-import com.stac.daijin.domain.user.enums.Gender;
+import com.stac.daijin.domain.user.domain.type.Gender;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

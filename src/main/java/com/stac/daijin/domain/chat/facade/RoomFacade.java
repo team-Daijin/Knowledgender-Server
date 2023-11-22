@@ -1,8 +1,8 @@
 package com.stac.daijin.domain.chat.facade;
 
-import com.stac.daijin.domain.chat.Room;
+import com.stac.daijin.domain.chat.domain.Room;
 import com.stac.daijin.domain.chat.exception.RoomNotFoundException;
-import com.stac.daijin.domain.chat.repository.RoomRepository;
+import com.stac.daijin.domain.chat.domain.repository.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

@@ -2,13 +2,13 @@ package com.stac.daijin.domain.chat.service;
 
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
-import com.stac.daijin.domain.chat.Message;
-import com.stac.daijin.domain.chat.Room;
+import com.stac.daijin.domain.chat.domain.Message;
+import com.stac.daijin.domain.chat.domain.Room;
 import com.stac.daijin.domain.chat.facade.RoomFacade;
 import com.stac.daijin.domain.chat.presentation.dto.request.MessageRequest;
 import com.stac.daijin.domain.chat.presentation.dto.response.MessageResponse;
-import com.stac.daijin.domain.chat.repository.MessageRepository;
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.chat.domain.repository.MessageRepository;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
 import com.stac.daijin.global.socket.constants.SocketEventProperty;
 import lombok.RequiredArgsConstructor;

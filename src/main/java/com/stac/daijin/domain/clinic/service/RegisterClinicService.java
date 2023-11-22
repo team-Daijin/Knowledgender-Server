@@ -1,13 +1,12 @@
 package com.stac.daijin.domain.clinic.service;
 
-import com.stac.daijin.domain.clinic.Coordinate;
-import com.stac.daijin.domain.clinic.Clinic;
+import com.stac.daijin.domain.clinic.domain.Coordinate;
+import com.stac.daijin.domain.clinic.domain.Clinic;
 import com.stac.daijin.domain.clinic.presentation.dto.ClinicRequest;
-import com.stac.daijin.domain.clinic.repository.ClinicRepository;
+import com.stac.daijin.domain.clinic.domain.repository.ClinicRepository;
 import com.stac.daijin.thirdparty.s3.UploadS3Service;
 import com.stac.daijin.thirdparty.s3.enums.Directory;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,7 +1,7 @@
 package com.stac.daijin.domain.clinic.domain;
 
 import com.stac.daijin.domain.appointment.domain.Appointment;
-import com.stac.daijin.global.jpa.BaseUUIDEntity;
+import com.stac.daijin.global.entity.BaseUUIDEntity;
 import lombok.*;
 
 import javax.persistence.CascadeType;

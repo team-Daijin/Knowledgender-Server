@@ -1,7 +1,7 @@
 package com.stac.daijin.domain.banner.domain;
 
 import com.stac.daijin.domain.banner.domain.type.State;
-import com.stac.daijin.global.jpa.BaseUUIDEntity;
+import com.stac.daijin.global.entity.BaseUUIDEntity;
 import lombok.*;
 
 import javax.persistence.Column;

@@ -5,7 +5,7 @@ import com.stac.daijin.domain.card.domain.Card;
 import com.stac.daijin.domain.user.domain.type.Gender;
 import com.stac.daijin.domain.user.domain.type.Job;
 import com.stac.daijin.domain.user.domain.type.Role;
-import com.stac.daijin.global.jpa.BaseUUIDEntity;
+import com.stac.daijin.global.entity.BaseUUIDEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

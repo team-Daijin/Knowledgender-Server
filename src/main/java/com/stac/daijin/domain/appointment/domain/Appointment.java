@@ -2,7 +2,7 @@ package com.stac.daijin.domain.appointment.domain;
 
 import com.stac.daijin.domain.clinic.domain.Clinic;
 import com.stac.daijin.domain.user.domain.User;
-import com.stac.daijin.global.jpa.BaseUUIDEntity;
+import com.stac.daijin.global.entity.BaseUUIDEntity;
 import lombok.*;
 
 import javax.persistence.Column;

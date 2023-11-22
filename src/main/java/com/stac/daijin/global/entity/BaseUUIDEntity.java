@@ -1,4 +1,4 @@
-package com.stac.daijin.global.jpa;
+package com.stac.daijin.global.entity;
 
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;

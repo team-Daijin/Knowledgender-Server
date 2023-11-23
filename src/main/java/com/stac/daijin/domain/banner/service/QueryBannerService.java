@@ -3,7 +3,7 @@ package com.stac.daijin.domain.banner.service;
 import com.stac.daijin.domain.banner.domain.type.State;
 import com.stac.daijin.domain.banner.presentation.dto.response.BannerListResponse;
 import com.stac.daijin.domain.banner.presentation.dto.response.BannerResponse;
-import com.stac.daijin.domain.banner.repository.BannerRepository;
+import com.stac.daijin.domain.banner.domain.repository.BannerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

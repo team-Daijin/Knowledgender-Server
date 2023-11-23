@@ -1,4 +1,4 @@
-package com.stac.daijin.domain.banner.repository;
+package com.stac.daijin.domain.banner.domain.repository;
 
 import com.stac.daijin.domain.banner.domain.Banner;
 import com.stac.daijin.domain.banner.domain.type.State;

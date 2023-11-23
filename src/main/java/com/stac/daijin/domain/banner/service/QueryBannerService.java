@@ -1,6 +1,6 @@
 package com.stac.daijin.domain.banner.service;
 
-import com.stac.daijin.domain.banner.enums.State;
+import com.stac.daijin.domain.banner.domain.type.State;
 import com.stac.daijin.domain.banner.presentation.dto.response.BannerListResponse;
 import com.stac.daijin.domain.banner.presentation.dto.response.BannerResponse;
 import com.stac.daijin.domain.banner.repository.BannerRepository;

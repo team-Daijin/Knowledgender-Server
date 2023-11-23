@@ -1,6 +1,5 @@
 package com.stac.daijin.domain.chat.presentation.dto.request;
 
-import com.stac.daijin.domain.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

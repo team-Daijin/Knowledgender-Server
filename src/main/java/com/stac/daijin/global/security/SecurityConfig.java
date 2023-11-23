@@ -1,7 +1,7 @@
 package com.stac.daijin.global.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.stac.daijin.domain.user.enums.Role;
+import com.stac.daijin.domain.user.domain.type.Role;
 import com.stac.daijin.global.exception.filter.GlobalExceptionFilter;
 import com.stac.daijin.global.security.auth.AuthUserService;
 import com.stac.daijin.global.security.jwt.filter.JwtAuthenticationFilter;

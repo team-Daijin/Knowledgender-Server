@@ -1,12 +1,11 @@
 package com.stac.daijin.domain.auth.service;
 
 import com.stac.daijin.domain.auth.presentation.dto.request.RegisterUserRequest;
-import com.stac.daijin.domain.user.enums.Role;
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.user.domain.type.Role;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.exception.UserAccountIdExistsException;
-import com.stac.daijin.domain.user.repository.UserRepository;
+import com.stac.daijin.domain.user.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

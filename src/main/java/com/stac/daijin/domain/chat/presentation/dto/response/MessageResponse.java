@@ -1,10 +1,9 @@
 package com.stac.daijin.domain.chat.presentation.dto.response;
 
-import com.stac.daijin.domain.chat.Message;
+import com.stac.daijin.domain.chat.domain.Message;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import org.joda.time.LocalDateTime;
 
 import java.time.format.DateTimeFormatter;
 

@@ -3,7 +3,7 @@ package com.stac.daijin.domain.chat.service;
 import com.stac.daijin.domain.chat.facade.RoomFacade;
 import com.stac.daijin.domain.chat.presentation.dto.response.MessageListResponse;
 import com.stac.daijin.domain.chat.presentation.dto.response.MessageResponse;
-import com.stac.daijin.domain.chat.repository.MessageRepository;
+import com.stac.daijin.domain.chat.domain.repository.MessageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

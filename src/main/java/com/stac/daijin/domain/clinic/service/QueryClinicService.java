@@ -1,9 +1,8 @@
 package com.stac.daijin.domain.clinic.service;
 
-import com.stac.daijin.domain.clinic.Coordinate;
-import com.stac.daijin.domain.clinic.Clinic;
+import com.stac.daijin.domain.clinic.domain.Coordinate;
 import com.stac.daijin.domain.clinic.presentation.dto.ClinicResponse;
-import com.stac.daijin.domain.clinic.repository.ClinicRepository;
+import com.stac.daijin.domain.clinic.domain.repository.ClinicRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

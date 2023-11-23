@@ -1,7 +1,6 @@
 package com.stac.daijin.domain.card.presentation.dto.response;
 
-import com.stac.daijin.domain.card.Card;
-import com.stac.daijin.domain.card.enums.CardCategory;
+import com.stac.daijin.domain.card.domain.Card;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

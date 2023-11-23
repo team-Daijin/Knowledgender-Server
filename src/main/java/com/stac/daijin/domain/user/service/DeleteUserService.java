@@ -1,7 +1,7 @@
 package com.stac.daijin.domain.user.service;
 
 import com.stac.daijin.domain.user.facade.UserFacade;
-import com.stac.daijin.domain.user.repository.UserRepository;
+import com.stac.daijin.domain.user.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

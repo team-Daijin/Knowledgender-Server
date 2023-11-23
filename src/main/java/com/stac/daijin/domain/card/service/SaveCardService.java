@@ -1,14 +1,14 @@
 package com.stac.daijin.domain.card.service;
 
-import com.stac.daijin.domain.card.Card;
+import com.stac.daijin.domain.card.domain.Card;
 import com.stac.daijin.domain.card.presentation.dto.request.SaveCardRequest;
-import com.stac.daijin.domain.card.repository.CardRepository;
-import com.stac.daijin.domain.user.enums.Role;
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.card.domain.repository.CardRepository;
+import com.stac.daijin.domain.user.domain.type.Role;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.exception.UserPermissionException;
 import com.stac.daijin.domain.user.facade.UserFacade;
-import com.stac.daijin.thirdparty.s3.UploadS3Service;
-import com.stac.daijin.thirdparty.s3.enums.Directory;
+import com.stac.daijin.thirdparty.s3.service.UploadS3Service;
+import com.stac.daijin.thirdparty.s3.type.Directory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

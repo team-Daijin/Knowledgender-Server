@@ -1,7 +1,6 @@
 package com.stac.daijin.domain.user.service;
 
-import com.stac.daijin.domain.user.User;
-import com.stac.daijin.domain.user.enums.Gender;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
 import com.stac.daijin.domain.user.presentation.dto.response.UserResponse;
 import lombok.RequiredArgsConstructor;

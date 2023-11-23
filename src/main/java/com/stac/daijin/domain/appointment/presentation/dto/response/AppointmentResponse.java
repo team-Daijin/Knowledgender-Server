@@ -1,7 +1,7 @@
 package com.stac.daijin.domain.appointment.presentation.dto.response;
 
-import com.stac.daijin.domain.appointment.Appointment;
-import com.stac.daijin.domain.clinic.Clinic;
+import com.stac.daijin.domain.appointment.domain.Appointment;
+import com.stac.daijin.domain.clinic.domain.Clinic;
 import lombok.Builder;
 import lombok.Getter;
 

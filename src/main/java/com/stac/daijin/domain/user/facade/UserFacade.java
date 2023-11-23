@@ -1,9 +1,9 @@
 package com.stac.daijin.domain.user.facade;
 
 import com.corundumstudio.socketio.SocketIOClient;
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.exception.UserNotFoundException;
-import com.stac.daijin.domain.user.repository.UserRepository;
+import com.stac.daijin.domain.user.domain.repository.UserRepository;
 import com.stac.daijin.global.security.auth.AuthUser;
 import com.stac.daijin.global.socket.constants.SocketStoreKey;
 import lombok.RequiredArgsConstructor;

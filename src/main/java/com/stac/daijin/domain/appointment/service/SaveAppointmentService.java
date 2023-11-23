@@ -1,12 +1,12 @@
 package com.stac.daijin.domain.appointment.service;
 
-import com.stac.daijin.domain.appointment.Appointment;
-import com.stac.daijin.domain.appointment.repository.AppointmentRepository;
-import com.stac.daijin.domain.clinic.Clinic;
+import com.stac.daijin.domain.appointment.domain.Appointment;
+import com.stac.daijin.domain.appointment.domain.repository.AppointmentRepository;
+import com.stac.daijin.domain.clinic.domain.Clinic;
 import com.stac.daijin.domain.appointment.presentation.dto.request.AppointmentRequest;
 import com.stac.daijin.domain.clinic.exception.ClinicNotFoundException;
-import com.stac.daijin.domain.clinic.repository.ClinicRepository;
-import com.stac.daijin.domain.user.User;
+import com.stac.daijin.domain.clinic.domain.repository.ClinicRepository;
+import com.stac.daijin.domain.user.domain.User;
 import com.stac.daijin.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

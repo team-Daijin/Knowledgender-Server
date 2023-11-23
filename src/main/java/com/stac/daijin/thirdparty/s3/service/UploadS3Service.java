@@ -1,9 +1,9 @@
-package com.stac.daijin.thirdparty.s3;
+package com.stac.daijin.thirdparty.s3.service;
 
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.*;
 import com.stac.daijin.thirdparty.s3.config.properties.S3Properties;
-import com.stac.daijin.thirdparty.s3.enums.Directory;
+import com.stac.daijin.thirdparty.s3.type.Directory;
 import com.stac.daijin.thirdparty.s3.exception.S3FailedFileSaveException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -4,8 +4,8 @@ import com.stac.daijin.domain.clinic.domain.Coordinate;
 import com.stac.daijin.domain.clinic.domain.Clinic;
 import com.stac.daijin.domain.clinic.presentation.dto.ClinicRequest;
 import com.stac.daijin.domain.clinic.domain.repository.ClinicRepository;
-import com.stac.daijin.thirdparty.s3.UploadS3Service;
-import com.stac.daijin.thirdparty.s3.enums.Directory;
+import com.stac.daijin.thirdparty.s3.service.UploadS3Service;
+import com.stac.daijin.thirdparty.s3.type.Directory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

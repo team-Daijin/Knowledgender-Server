@@ -1,4 +1,4 @@
-package com.stac.daijin.thirdparty.s3.enums;
+package com.stac.daijin.thirdparty.s3.type;
 
 public enum Directory {
     CARD,

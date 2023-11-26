@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:4.4
+    container_name: knowledgender.local.mongo
+    hostname: daijin
+    environment:
+      - MONGO_INITDB_DATABASE=knowledgender
+    ports:
+      - 27017:27017
+
+  redis:
+    image: redis:7.0-alpine
+    container_name: knowledgender.local.redis
+    hostname: daijin
+    command: /bin/sh -c "redis-server --requirepass daijin"
+    ports:
+      - 6379:6379

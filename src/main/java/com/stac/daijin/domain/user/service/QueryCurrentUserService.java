@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class QueryUserByIdService {
+public class QueryCurrentUserService {
     private final UserFacade userFacade;
 
     public UserResponse execute() {

@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class QueryAllCardByCategoryService {
+public class QueryCategoryCardListService {
 
     private final CardRepository cardRepository;
 

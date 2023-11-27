@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class QueryBannerService {
+public class QueryBannerListService {
     private final BannerRepository bannerRepository;
 
     @Transactional(readOnly = true)

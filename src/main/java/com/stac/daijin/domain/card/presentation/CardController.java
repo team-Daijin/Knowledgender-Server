@@ -20,7 +20,7 @@ public class CardController {
     private final SaveCardService saveCardService;
     private final DeleteCardService deleteCardService;
     private final UpdateCardService updateCardService;
-    private final QueryAllCardByCategoryService queryAllCardByCategoryService;
+    private final QueryCategoryCardListService queryCategoryCardListService;
     private final QueryCardByIdService queryCardByIdService;
 
     @PostMapping("/")
@@ -36,7 +36,7 @@ public class CardController {
     public CardListResponse getCardByCategory(
             @RequestParam String category
     ) {
-        return queryAllCardByCategoryService.execute(category);
+        return queryCategoryCardListService.execute(category);
     }
 
     @GetMapping("/{id}")

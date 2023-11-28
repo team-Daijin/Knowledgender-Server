@@ -21,6 +21,7 @@ public class CardController {
     private final DeleteCardService deleteCardService;
     private final UpdateCardService updateCardService;
     private final QueryCategoryCardListService queryCategoryCardListService;
+    private final QueryUserCardService queryUserCardService;
     private final QueryCardByIdService queryCardByIdService;
 
     @PostMapping("/")
@@ -37,6 +38,12 @@ public class CardController {
             @RequestParam String category
     ) {
         return queryCategoryCardListService.execute(category);
+    }
+
+    @GetMapping("/user")
+    @ResponseStatus(HttpStatus.OK)
+    public CardListResponse getCardByUser() {
+        return queryUserCardService.execute();
     }
 
     @GetMapping("/{id}")

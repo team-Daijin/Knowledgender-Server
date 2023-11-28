@@ -1,7 +1,7 @@
 package com.stac.daijin.domain.appointment.presentation;
 
 import com.stac.daijin.domain.appointment.presentation.dto.response.AppointmentListResponse;
-import com.stac.daijin.domain.appointment.service.QueryAppointmentListService;
+import com.stac.daijin.domain.appointment.service.QueryUserAppointmentListService;
 import com.stac.daijin.domain.appointment.service.SaveAppointmentService;
 import com.stac.daijin.domain.appointment.presentation.dto.request.AppointmentRequest;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/appointment")
 public class AppointmentController {
     private final SaveAppointmentService saveAppointmentService;
-    private final QueryAppointmentListService queryAppointmentListService;
+    private final QueryUserAppointmentListService queryUserAppointmentListService;
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.OK)
@@ -26,6 +26,6 @@ public class AppointmentController {
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
     public AppointmentListResponse getAppointmentByUser() {
-        return queryAppointmentListService.execute();
+        return queryUserAppointmentListService.execute();
     }
 }

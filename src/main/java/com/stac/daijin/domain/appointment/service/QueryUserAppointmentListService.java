@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class QueryAppointmentListService {
+public class QueryUserAppointmentListService {
     private final AppointmentRepository appointmentRepository;
     private final UserFacade userFacade;
 

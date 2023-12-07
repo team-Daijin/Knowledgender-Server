@@ -26,7 +26,7 @@ public class ClinicController {
         registerClinicService.execute(request);
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
     public List<ClinicResponse> getClinicListByLocation(
             @RequestParam("latitude") Double latitude,

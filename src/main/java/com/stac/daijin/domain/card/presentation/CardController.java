@@ -32,7 +32,7 @@ public class CardController {
         saveCardService.execute(request);
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
     public CardListResponse getCardByCategory(
             @RequestParam String category

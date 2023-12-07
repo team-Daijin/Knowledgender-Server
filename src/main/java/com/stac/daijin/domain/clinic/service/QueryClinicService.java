@@ -15,8 +15,8 @@ public class QueryClinicService {
     private final ClinicRepository clinicRepository;
 
     public List<ClinicResponse> execute(
-            double latitude,
-            double longitude
+            final double latitude,
+            final double longitude
     ) {
         return clinicRepository.findAllByCoordinateAndDistanceInMeters(
                 Coordinate.of(latitude, longitude), 10000

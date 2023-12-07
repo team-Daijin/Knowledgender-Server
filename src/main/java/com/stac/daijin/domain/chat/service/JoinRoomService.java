@@ -22,8 +22,8 @@ public class JoinRoomService {
 
     @Transactional
     public void execute(
-            SocketIOClient client,
-            JoinRoomRequest request
+            final SocketIOClient client,
+            final JoinRoomRequest request
     ) {
         Room room = roomFacade.getRoomByRoomId(request.getId());
         User user = userFacade.findUserByClient(client);

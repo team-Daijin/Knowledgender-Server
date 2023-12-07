@@ -25,7 +25,10 @@ public class SendMessageService {
     private final UserFacade userFacade;
 
     @Transactional
-    public void sendMessage(MessageRequest request, SocketIOClient client) {
+    public void sendMessage(
+            final MessageRequest request,
+            final SocketIOClient client
+    ) {
         User user = userFacade.findUserByClient(client);
         Room room = roomFacade.getRoomByRoomId(request.getRoomId());
         Message message = messageRepository.save(

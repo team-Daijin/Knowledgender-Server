@@ -20,8 +20,8 @@ public class QueryMessageListService {
     private final RoomFacade roomFacade;
 
     public MessageListResponse execute(
-            String roomId,
-            int page
+            final String roomId,
+            final int page
     ) {
         Pageable pageable = PageRequest.of(page, 10, Sort.by("sentAt"));
         return new MessageListResponse(
